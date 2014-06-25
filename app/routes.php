@@ -57,11 +57,11 @@ Route::get('/', function()
 
     if($data['playing'])
     {
-        return Redirect::to('/clasificacion');
+        return Redirect::to('/leaderboard');
     }
     else
     {
-        return Redirect::to('/prediccion');
+        return Redirect::to('/prediction/create');
     }
 
     return View::make('user', array('data'=>$data));
@@ -78,12 +78,10 @@ Route::get('/terminos', function()
 	echo 'terminos';
 });
 
-Route::get('/clasificacion', function()
+Route::get('/leaderboard', function()
 {
     echo 'clasificacion';
 });
 
-Route::get('/prediccion', function()
-{
-    echo 'prediccion';
-});
+Route::resource('/prediction', 'PredictionController',
+                array('only' => array('create', 'show', 'store')));
