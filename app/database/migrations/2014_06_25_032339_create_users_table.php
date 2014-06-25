@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
             $table->string('remember_token', 100)->nullable();
             $table->string('name');
             $table->string('password');
+            $table->boolean('playing')->default(0);
             $table->timestamps();
         });
 	}

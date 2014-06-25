@@ -54,7 +54,18 @@ Route::get('/', function()
     if (Auth::check()) {
         $data = Auth::user();
     }
+
+    if($data['playing'])
+    {
+        return Redirect::to('/clasificacion');
+    }
+    else
+    {
+        return Redirect::to('/prediccion');
+    }
+
     return View::make('user', array('data'=>$data));
+    
 });
  
 Route::get('logout', function() {
@@ -65,4 +76,14 @@ Route::get('logout', function() {
 Route::get('/terminos', function()
 {
 	echo 'terminos';
+});
+
+Route::get('/clasificacion', function()
+{
+    echo 'clasificacion';
+});
+
+Route::get('/prediccion', function()
+{
+    echo 'prediccion';
 });
