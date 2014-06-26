@@ -18,7 +18,7 @@ class CreatePredictionsTable extends Migration {
 			$table->integer('match_id')->unsigned();
 			$table->integer('score_a');
 			$table->integer('score_b');
-			$table->integer('points');
+			$table->integer('points')->nullable();
 			$table->timestamps();
 		});
 	}

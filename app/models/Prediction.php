@@ -1,7 +1,7 @@
 <?php
 
 class Prediction extends \Eloquent {
-	protected $fillable = [];
+	protected $fillable = ['user_id', 'match_id', 'score_a', 'score_b'];
 
 	public function user()
     {
