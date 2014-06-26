@@ -64,7 +64,8 @@ Route::get('/', function()
 	    }
     }
 
-    return View::make('user', array('data'=>$data));
+    return View::make('home.index');
+    // return View::make('user', array('data'=>$data));
     
 });
  
