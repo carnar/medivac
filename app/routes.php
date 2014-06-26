@@ -53,15 +53,15 @@ Route::get('/', function()
  
     if (Auth::check()) {
         $data = Auth::user();
-    }
 
-    if($data['playing'])
-    {
-        return Redirect::to('/leaderboard');
-    }
-    else
-    {
-        return Redirect::to('/prediction/create');
+	    if($data['playing'])
+	    {
+	        return Redirect::to('/leaderboard');
+	    }
+	    else
+	    {
+	        return Redirect::to('/prediction/create');
+	    }
     }
 
     return View::make('user', array('data'=>$data));
@@ -80,8 +80,15 @@ Route::get('/terminos', function()
 
 Route::get('/leaderboard', function()
 {
-    echo 'clasificacion';
+    return View::make('leaderboard.countdown');
 });
 
 Route::resource('/prediction', 'PredictionController',
                 array('only' => array('create', 'show', 'store')));
+
+
+// Route::resource('score', 'ScoreController',
+// 				['only' => ['edit', 'update', 'show']]);
+
+Route::get('scores', 'ScoreController@index');
+Route::get('scores/update', 'ScoreController@update');

@@ -3,22 +3,15 @@
 class PredictionController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-	}
-
-
-	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
+
+		if(Auth::guest()  || Auth::user()->playing) return Redirect::to('/');
+
 		$matches = Match::all();
 		$data = [];
 		foreach ($matches as $match) {
@@ -51,6 +44,11 @@ class PredictionController extends \BaseController {
 			$result = Prediction::create($prediction);
 			// dd($result->id);
 		}
+		//change playing status
+		$user = User::findOrFail(Auth::user()->id);
+		$user->playing = 1;
+		$user->save();
+
 		return Redirect::to('/prediction/' . Auth::user()->id);
 	}
 
@@ -63,53 +61,37 @@ class PredictionController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$predictions = User::findOrFail($id)->predictions();
-		//dd($predictions);
+		try 
+		{
+			$user = User::findOrFail($id);
 
-		foreach ($predictions as $prediction) {
-			echo 'llega';
-			// echo $predition->match_id . '</br>';
-			// echo $predition->score_a . '</br>';
-			// echo $predition->score_b . '</br>';
-			echo '</br>';
+			$predictions = $user->predictions()->get();
+			$data = new stdClass();
+			$data->user_id = $user->id;
+			$data->user_name = $user->name;
+			$data->user_photo = $user->photo;
+
+			$userPredictions = [];
+			foreach ($predictions as $prediction) {
+
+				$match = Match::findOrFail($prediction->match_id);
+				$teamA = Team::findOrFail($match->team_a_id);
+				$teamB = Team::findOrFail($match->team_b_id);
+				
+				$userPrediction = new stdClass();
+				$userPrediction->team_a = $teamA;
+				$userPrediction->score_a = $prediction->score_a;
+				$userPrediction->team_b = $teamB;
+				$userPrediction->score_b = $prediction->score_b;
+				$userPredictions[] = $userPrediction;
+
+			}
+			$data->user_predictions = $userPredictions;
+			return View::make('prediction.show')->with('data', $data);
+		} 
+		catch (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+			// echo "404";
+			App::abort(404); 
 		}
 	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
-
 }
