@@ -1,0 +1,80 @@
+//vars & mixins
+@import "compass";
+
+//body
+body{
+    min-width: 960px;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    background: #00164F url(../img/main_background.jpg) no-repeat center top;
+}
+//fonts
+.special_font{
+    font-family: 'Asap', sans-serif;
+    font-weight: 400px;
+}
+//generals
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
+//buttons
+.button{
+    border: none;
+    line-height: 50px;
+    padding: 0 30px 10px;
+    @extend .special_font;
+    font-size: 16px;
+    @include border-radius(4px);
+    @include box-shadow(0px -8px 0px rgba(0,0,0,0.5) inset, 0px -9px 0px rgba(255,255,255,0.2) inset,0px 20px 35px rgba(0,0,0,0.8));
+    
+    span{
+        display: inline-block;
+    }
+    &.fb_blue{
+        color: #fff;
+        background-color: #6199ef; // Old browsers
+        @include filter-gradient(#6199ef, #4e8aec, vertical); // IE6-9
+        @include background-image(linear-gradient(top, #6199ef 0%,#4e8aec 100%));
+        @include box-shadow(0px -8px 0px #3d60c0 inset, 0px -9px 0px rgba(255,255,255,0.2) inset,0px 20px 35px rgba(0,0,0,0.8));
+        span{
+            padding-left: 25px;
+            background: url(../img/fb_icon.png) no-repeat left center;
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        color: #311e0c;
+        // needs latest Compass, add '@import "compass"' to your scss
+        background-color: #ffd155; // Old browsers
+        @include filter-gradient(#ffd155, #ffc843, vertical); // IE6-9
+        @include background-image(linear-gradient(top,  #ffd155 0%,#ffc843 100%));
+        @include box-shadow(0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255,255,255,0.2) inset,0px 20px 35px rgba(0,0,0,0.8));
+    }
+}
+
+//intro login
+#intro_login{
+    width: 320px;
+    margin: 0 auto;
+    margin-top: 200px;
+    text-align: center;
+    color: #fff;
+    @include text-shadow(0px 2px 1px rgba(0,0,0,0.4));
+    
+    .special_font{
+        font-size: 19px;
+    }
+    #login_logo{
+        overflow: hidden;
+        text-indent: -9999px;
+        height: 40px;
+        margin-top: -16px;
+        background: url(../img/logo.png) center no-repeat;
+    }
+    #login_button{
+        display: block;
+        width: 100%;
+    }
+}
