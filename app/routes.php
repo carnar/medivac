@@ -95,4 +95,4 @@ Route::get('scores', 'ScoreController@index');
 Route::get('scores/edit', 'ScoreController@edit');
 Route::post('scores', 'ScoreController@update');
 
-Route::resource('carnar', 'CarnarController');
+// Route::resource('carnar', 'CarnarController');
