@@ -92,4 +92,7 @@ Route::resource('/prediction', 'PredictionController',
 // 				['only' => ['edit', 'update', 'show']]);
 
 Route::get('scores', 'ScoreController@index');
-Route::get('scores/update', 'ScoreController@update');
+Route::get('scores/edit', 'ScoreController@edit');
+Route::post('scores', 'ScoreController@update');
+
+Route::resource('carnar', 'CarnarController');

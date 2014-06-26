@@ -12,17 +12,23 @@ class PredictionController extends \BaseController {
 
 		if(Auth::guest()  || Auth::user()->playing) return Redirect::to('/');
 
+		$data = new stdClass();
+		$data->user_id = Auth::user()->id;
+		$data->user_name = Auth::user()->name;
+		$data->user_photo = Auth::user()->photo;
+
 		$matches = Match::all();
-		$data = [];
+		$newMatches = [];
 		foreach ($matches as $match) {
 			$newMatch = new stdClass();
 			$newMatch->team_a = Team::find($match->team_a_id);
 			$newMatch->team_b = Team::find($match->team_b_id);
 			$newMatch->id = $match->id;
-			$data[] = $newMatch;
+			$newMatches[] = $newMatch;
 		}
+		$data->matches = $newMatches;
 		// exit;
-		return View::make('prediction.form')->with('matches', $data);
+		return View::make('prediction.form')->with('data', $data);
 	}
 
 
