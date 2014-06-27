@@ -1,6 +1,6 @@
 <?php
 
-Route::get('login/fb', function() {
+Route::get('/login/fb', function() {
     $facebook = new Facebook(Config::get('facebook'));
     $params = array(
         'redirect_uri' => url('/login/fb/callback'),
@@ -9,7 +9,7 @@ Route::get('login/fb', function() {
     return Redirect::to($facebook->getLoginUrl($params));
 });
 
-Route::get('login/fb/callback', function() {
+Route::get('/login/fb/callback', function() {
     $code = Input::get('code');
     if (strlen($code) == 0) return Redirect::to('/')->with('message', 'There was an error communicating with Facebook');
  
@@ -53,8 +53,20 @@ Route::get('/', function()
  
     if (Auth::check()) {
         $data = Auth::user();
+
+	    if($data['playing'])
+	    {
+	        return Redirect::to('/leaderboard');
+	    }
+	    else
+	    {
+	        return Redirect::to('/prediction/create');
+	    }
     }
-    return View::make('user', array('data'=>$data));
+
+    return View::make('home.index');
+    // return View::make('user', array('data'=>$data));
+    
 });
  
 Route::get('logout', function() {
@@ -65,4 +77,35 @@ Route::get('logout', function() {
 Route::get('/terminos', function()
 {
 	echo 'terminos';
+});
+
+Route::get('/leaderboard', function()
+{
+    return View::make('leaderboard.countdown');
+});
+
+Route::resource('/prediction', 'PredictionController',
+                array('only' => array('create', 'show', 'store')));
+
+
+// Route::resource('score', 'ScoreController',
+// 				['only' => ['edit', 'update', 'show']]);
+
+Route::get('scores', 'ScoreController@index');
+Route::get('scores/edit', 'ScoreController@edit');
+Route::post('scores', 'ScoreController@update');
+Route::get('rules', function(){ return View::make('share.rules'); });
+
+// Route::resource('carnar', 'CarnarController');
+// Route::get('test', function()
+// {
+//  // assign points;
+//  $points = new Points(User::all(), Match::all());
+//  $points->assignment();
+// });
+
+Route::get('test', function()
+{
+    dd(url('/'));
+    return View::make('share.test');
 });

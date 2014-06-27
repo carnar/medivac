@@ -1,0 +1,430 @@
+/////////////////////////////////////
+//vars & mixins
+/////////////////////////////////////
+@import "compass";
+@import "tools";
+/////////////////////////////////////
+//reset
+/////////////////////////////////////
+@import "reset";
+/////////////////////////////////////
+//body
+/////////////////////////////////////
+body{
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    background: #00164F url(../img/main_background.jpg) no-repeat center top;
+    background-attachment: fixed;
+}
+/////////////////////////////////////
+//fonts
+/////////////////////////////////////
+.special_font{
+    font-family: 'Asap', sans-serif;
+    font-weight: 400px;
+}
+/////////////////////////////////////
+//generals
+/////////////////////////////////////
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+.row{
+    max-width: 800px;
+    min-width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    @extend .clear;
+    @include box-sizing(border-box);
+}
+.clear{
+    &:before, &:after{
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
+h1, h2, h3, h4, h5, h6{
+    @extend .special_font;
+    font-weight: 400;
+    color: #fff;
+    @extend .text_shadow;
+}
+h1{ font-size: 36px; }
+p{
+    color: #fff;
+    margin: 10px 0;
+    @extend .text_shadow;
+}
+a{
+    text-decoration: none;
+}
+/////////////////////////////////////
+//specials
+/////////////////////////////////////
+.text_shadow{
+    @include text-shadow(0px 2px 1px rgba(0,0,0,0.4));
+}
+/////////////////////////////////////
+//buttons
+/////////////////////////////////////
+.button{
+    border: none;
+    line-height: 50px;
+    padding: 0 30px 10px;
+    @extend .special_font;
+    font-size: 16px;
+    color: white;
+    @include border-radius(4px);
+    @include box-shadow(0px -8px 0px rgba(0,0,0,0.5) inset, 0px -9px 0px rgba(255,255,255,0.2) inset,0px 20px 35px rgba(0,0,0,0.8));
+    // needs latest Compass, add '@import "compass"' to your scss
+    background-color: rgb(0,187,76); // Old browsers
+    @include filter-gradient(#00bb4c, #00af3b, vertical); // IE6-9
+    @include background-image(linear-gradient(top,  rgba(0,187,76,1) 0%,rgba(0,175,59,1) 100%));
+    
+    span{
+        display: inline-block;
+    }
+    &.red{
+        // needs latest Compass, add '@import "compass"' to your scss
+        background-color: rgb(255,46,69); // Old browsers
+        @include filter-gradient(#ff2e45, #ff2438, vertical); // IE6-9
+        @include background-image(linear-gradient(top,  rgba(255,46,69,1) 0%,rgba(255,36,56,1) 100%));
+
+    }
+    &.fb_blue{
+        color: #fff;
+        background-color: #6199ef; // Old browsers
+        @include filter-gradient(#6199ef, #4e8aec, vertical); // IE6-9
+        @include background-image(linear-gradient(top, #6199ef 0%,#4e8aec 100%));
+        @include box-shadow(0px -8px 0px #3d60c0 inset, 0px -9px 0px rgba(255,255,255,0.2) inset,0px 20px 35px rgba(0,0,0,0.8));
+        span{
+            padding-left: 25px;
+            background: url(../img/fb_icon.png) no-repeat left center;
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        color: #311e0c;
+        // needs latest Compass, add '@import "compass"' to your scss
+        background-color: #ffd155; // Old browsers
+        @include filter-gradient(#ffd155, #ffc843, vertical); // IE6-9
+        @include background-image(linear-gradient(top,  #ffd155 0%,#ffc843 100%));
+        @include box-shadow(0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255,255,255,0.2) inset,0px 20px 35px rgba(0,0,0,0.8));
+    }
+}
+/////////////////////////////////////
+//intro login
+/////////////////////////////////////
+#intro_login{
+    width: 320px;
+    margin: 0 auto;
+    margin-top: 200px;
+    text-align: center;
+    color: #fff;
+    @include text-shadow(0px 2px 1px rgba(0,0,0,0.4));
+    
+    .special_font{
+        font-size: 19px;
+    }
+    #login_logo{
+        overflow: hidden;
+        text-indent: -9999px;
+        height: 40px;
+        margin-top: -16px;
+        background: url(../img/logo.png) center no-repeat;
+    }
+    p{
+        margin:  20px 0;
+    }
+    #login_button{
+        display: block;
+        width: 100%;
+    }
+}
+/////////////////////////////////////
+//notification_box
+/////////////////////////////////////
+#notification_box{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    z-index: 10000;
+    background: #fff;
+    @include box-shadow(0px 20px 35px rgba(0,0,0,0.8));
+    
+    ul{
+        list-style: disc;
+    }
+    p, li{
+        margin: 10px;
+    }
+    &.success{
+        color: #fff;
+        background: #00BB4C;
+    }
+    &.error{
+        color: #fff;
+        background: #FF3246;
+    }
+}
+/////////////////////////////////////
+//modal
+/////////////////////////////////////
+#modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 9999;
+    
+    #modal_box{
+        position: absolute;
+        left: 50%;
+        min-width: 320px;
+        max-width: 400px;
+        margin-top: 200px;
+        margin-left: -200px;
+        text-align: center;
+        
+        
+        p{
+            padding: 30px;
+            margin: 10px 0;
+            line-height: 1.6em;
+            color: #333;
+            background: #fff;
+            @include text-shadow(none);
+            @include border-radius(10px);
+            @include box-sizing(border-box);
+            @include box-shadow(0px 20px 35px rgba(0,0,0,0.8));
+        }
+        button{
+            margin: 10px;
+        }
+    }
+}
+/////////////////////////////////////
+//header
+/////////////////////////////////////
+#header{
+    padding-top: 20px;
+    @include background-image(linear-gradient(top,  rgba(0,0,0,.75) 10%,rgba(0,0,0,0.50) 50%,rgba(0,0,0,0) 100%));
+
+    .row:first-child{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+    .row:last-child{
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.25);
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+    //logo
+    #logo{
+        float: left;
+        overflow: hidden;
+        text-indent: -9999px;
+        width: 275px;
+        height: 40px;
+        background: url(../img/logo.png) center no-repeat;
+    }
+    //main menu
+    #main_menu{
+        float: right;
+        list-style: none;
+        font-size: 20px;
+        @extend .special_font;
+        
+        li{
+            float: left;
+            margin-left: 20px;
+            line-height: 40px;
+            
+            a{
+                color: white;
+            }
+             &:hover a, &.current a{
+                color: #FFC934;
+            }
+        }
+    }
+    //user data
+    #user_data{
+        @extend .clear;
+        @extend .special_font;
+        @extend .text_shadow;
+        padding-bottom: 20px;
+        
+        #user_photo{
+            overflow: hidden;
+            float: left;
+            border: 5px solid white;
+            @include border-radius(100px);
+            background: white;
+            @include box-shadow(0px 15px 25px rgba(0,0,0,0.5));
+        }
+        #user_name{
+            padding-top: 25px;
+            padding-left: 15px;
+            font-size: 35px;
+            color: white;
+            
+            @include ellipsis();
+            line-height: 35px;
+        }
+        #user_position{
+            padding-left: 15px;
+            color: rgba(255,255,255, 0.6);
+            font-size: 24px;
+            line-height: 24px;
+            &:hover{
+                color: #FFC934;
+            }
+        }
+    }
+}
+/////////////////////////////////////
+//main
+/////////////////////////////////////
+#main{
+    .row:first-child{
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.25);
+    }
+    .row:last-child{
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+    
+    //prediction_table
+    #prediction_table{
+        text-align: center;
+        .date_row{
+            @extend .special_font;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            background: white;
+        }
+        .match{
+            padding: 10px 20px;
+            border-top: 1px solid #222;
+            border-bottom: #555 solid 1px;
+            background: #333;
+            @extend .clear;
+            @include box-shadow(0px 15px 25px rgba(0,0,0,0.5));
+            
+            .prediction{
+                float: left;
+                width: 20%;
+                line-height: 48px;
+                color: white;
+                font-size: 18px;
+            }
+            .team-a,.team-b{
+                float: left;
+                width: 40%;
+                
+                label{
+                    float: left;
+                    @extend .special_font;
+                    color: white;
+                    display: inline-block;
+                    width: 110px;
+                    padding-left: 55px;
+                    margin-right: 10px;
+                    text-align: left;
+                    font-size: 16px;
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    line-height: 48px;
+                    @include ellipsis;
+                    
+                    &.ar{ background-image: url(../img/flags/x48/ar.png); }
+                    &.be{ background-image: url(../img/flags/x48/be.png); }
+                    &.br{ background-image: url(../img/flags/x48/br.png); }
+                    &.ch{ background-image: url(../img/flags/x48/ch.png); }
+                    &.cl{ background-image: url(../img/flags/x48/cl.png); }
+                    &.co{ background-image: url(../img/flags/x48/co.png); }
+                    &.cr{ background-image: url(../img/flags/x48/cr.png); }
+                    &.de{ background-image: url(../img/flags/x48/de.png); }
+                    &.dz{ background-image: url(../img/flags/x48/dz.png); }
+                    &.fr{ background-image: url(../img/flags/x48/fr.png); }
+                    &.gr{ background-image: url(../img/flags/x48/gr.png); }
+                    &.mx{ background-image: url(../img/flags/x48/mx.png); }
+                    &.ng{ background-image: url(../img/flags/x48/ng.png); }
+                    &.nl{ background-image: url(../img/flags/x48/nl.png); }
+                    &.us{ background-image: url(../img/flags/x48/us.png); }
+                    &.uy{ background-image: url(../img/flags/x48/uy.png); }
+                }
+                input{
+                    float: left;
+                    padding: 10px;
+                    font-size: 24px;
+                    line-height: 28px;
+                    width: 40px;
+                    border: none;
+                    text-align: center;
+                    @include border-radius(5px);
+                    @include box-shadow(0px 3px 5px rgba(0,0,0,0.15) inset,0px 2px 5px rgba(0,0,0,0.8));
+                }
+            }
+            .team-b{
+                label{
+                    float: right;
+                    padding-left: 0;
+                    padding-right: 55px;
+                    margin-right: 0;
+                    margin-left: 10px;
+                    text-align: right;
+                    background-position: right center;
+                }
+                input{
+                    float: right;
+                }
+            }
+        }
+        button.yellow{
+            display: block;
+            width: 100%;
+            margin: 20px 0 0;
+        }
+    }
+}
+/////////////////////////////////////
+//footer
+/////////////////////////////////////
+#footer{
+    padding-bottom: 40px;
+    text-align: center;
+    
+    .row:first-child{
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.25);
+    }
+    .footer_rights{
+        color: rgba(255,255,255, 0.5);
+        
+        a{
+            color: rgba(255,255,255, 0.8);
+            
+            &:hover{
+                color: rgba(255,255,255, 1);
+                border-bottom: 1px dotted white;
+            }
+        }
+    }
+} 

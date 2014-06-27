@@ -1,0 +1,54 @@
+/* //////////////////////////////////////////////
+	Author: Erick Alexander
+	Creation Date: 02/06/2014
+	Last modified: dd/mm/yyyy
+	Edited by: Editor name
+	Description: base variables and mixins
+///////////////////////////////////////////////*/
+
+//mixins for clear witch before or after
+@mixin clearStyles(){
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+@mixin clear($position){
+    @if $position == before{
+        &:before{
+            @include clearStyles();
+        }
+    }@else if $position == after{
+        &:after{
+            @include clearStyles();
+        }
+    }@else if $position == both{
+        &:before, &:after{
+            @include clearStyles();
+        }
+    }
+}
+//hide-text
+@mixin hideText(){
+    overflow: hidden;
+    text-indent: -9999px;
+}
+//text ellipsis
+@mixin ellipsis($lines-to-show:1, $line-height:1em){
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    @if $lines-to-show == 1{
+        white-space: nowrap;
+    }@else{
+        //display: -webkit-box;
+        height: auto;
+        max-height: $line-height*$lines-to-show;
+        margin: 0 auto;
+        line-height: $line-height;
+        -webkit-line-clamp: $lines-to-show;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
