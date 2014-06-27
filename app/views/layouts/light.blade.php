@@ -6,7 +6,7 @@
     <meta property="og:url" content="{{URL::current()}}" />
     <meta property="og:title" content="Mundialito 2014" />
     <meta property="og:description" content="Atrévete a pronosticar los resultados del Mundial 2014" />
-    <meta property="og:image" content="{{ url('/ui/img/facebook-share.jpg') }}"/>
+    <meta property="og:image" content="{{ url('/') . '/ui/img/facebook-share.jpg' }}"/>
     <meta property="fb:app_id" content="{{Config::get('facebook')['appId']}}" />
 
     <title>Mundialito 2014</title>
