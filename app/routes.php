@@ -102,3 +102,8 @@ Route::post('scores', 'ScoreController@update');
 // 	$points = new Points(User::all(), Match::all());
 // 	$points->assignment();
 // });
+
+Route::get('test', function()
+{
+	return View::make('share.test');
+});
