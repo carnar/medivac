@@ -5,14 +5,14 @@ class MatchesTableSeeder extends Seeder {
 	public function run()
 	{
 		$data =   [
-				    ["team_a_id" => 1, "team_b_id" => 2],
-				    ["team_a_id" => 17, "team_b_id" => 18],
-				    ["team_a_id" => 5, "team_b_id" => 6],
-				    ["team_a_id" => 19, "team_b_id" => 20],
-				    ["team_a_id" => 9, "team_b_id" => 10],
-				    ["team_a_id" => 11, "team_b_id" => 12],
-				    ["team_a_id" => 13, "team_b_id" => 14],
-				    ["team_a_id" => 15, "team_b_id" => 16],
+				    ["team_a_id" => 1, "team_b_id" => 7],
+				    ["team_a_id" => 9, "team_b_id" => 13],
+				    ["team_a_id" => 6, "team_b_id" => 3],
+				    ["team_a_id" => 14, "team_b_id" => 10],
+				    ["team_a_id" => 19, "team_b_id" => 24],
+				    ["team_a_id" => 25, "team_b_id" => 30],
+				    ["team_a_id" => 21, "team_b_id" => 17],
+				    ["team_a_id" => 29, "team_b_id" => 28],
 				  ];
 
 		foreach($data as $row)
