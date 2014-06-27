@@ -96,3 +96,9 @@ Route::get('scores/edit', 'ScoreController@edit');
 Route::post('scores', 'ScoreController@update');
 
 // Route::resource('carnar', 'CarnarController');
+// Route::get('test', function()
+// {
+// 	// assign points;
+// 	$points = new Points(User::all(), Match::all());
+// 	$points->assignment();
+// });

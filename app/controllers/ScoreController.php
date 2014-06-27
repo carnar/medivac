@@ -37,7 +37,7 @@ class ScoreController extends BaseController {
 			//$newMatch->score_b = $match->score_b;
 			$data[] = $newMatch;
 		}
-		// assign points;
+
 		return View::make('scores.form')->with('matches', $data);
 	}
 
@@ -55,6 +55,10 @@ class ScoreController extends BaseController {
 				$match->save();
 			}
 		}
+			
+		// assign points;
+		$points = new Points(User::all(), Match::all());
+		$points->assignment();
 
 		return Redirect::to('scores/edit')->with('message', $message);
 	}
