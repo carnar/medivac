@@ -6,7 +6,8 @@
 	<div class="name">
 		<span class="full-name">{{ $data->user_name }}</span>
 	</div>
-	<div class="point">7</div>
+	<div class="place">#3</div>
+	<div class="points">7 pts.</div>
 </div>
 <div id="predictions">	
 	@foreach($data->user_predictions as $prediction)

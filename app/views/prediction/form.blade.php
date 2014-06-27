@@ -1,6 +1,15 @@
-{{ Form::open(array('url' => '/prediction')) }}
+<div id="user-info">
+	<div class="photo">
+		<img src="{{ $data->user_photo }}">
+	</div>
+	<div class="name">
+		<span class="full-name">{{ $data->user_name }}</span>
+	</div>
+</div>
+
 <div id="prediction-form">
-@foreach($matches as $match)
+{{ Form::open(array('url' => '/prediction')) }}
+@foreach($data->matches as $match)
 <div class="match">
 	<div class="team-a">
 		<div class="name">
@@ -21,5 +30,5 @@
 </div>
 @endforeach
 	{{ Form::submit('Jugar!') }}
-</div>
 {{ Form::close() }}
+</div>
