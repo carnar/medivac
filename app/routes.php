@@ -106,6 +106,6 @@ Route::get('rules', function(){ return View::make('share.rules'); });
 
 Route::get('test', function()
 {
-    dd(Auth::user()->predictions()->first()->id);
+    dd(url('/'));
     return View::make('share.test');
 });

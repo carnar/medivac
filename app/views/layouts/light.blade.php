@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="sitename" property="og:site_name" content="Mundialito 2014" />
+    <meta property="og:url" content="{{URL::current()}}" />
+    <meta property="og:title" content="Mundialito 2014" />
+    <meta property="og:description" content="Atrévete a pronosticar los resultados del Mundial 2014" />
+    <meta property="og:image" content="{{ url('/ui/img/facebook-share.jpg') }}"/>
+    <meta property="fb:app_id" content="{{Config::get('facebook')['appId']}}" />
+
     <title>Mundialito 2014</title>
     <link href='http://fonts.googleapis.com/css?family=Asap:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/ui/css/styles.css" />
