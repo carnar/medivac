@@ -5,8 +5,8 @@
     <meta name="sitename" property="og:site_name" content="Mundialito 2014" />
     <meta property="og:url" content="{{URL::current()}}" />
     <meta property="og:title" content="Mundialito 2014" />
-    <meta property="og:description" content="Mira mi pronósticos para la siguiente fase del Mundial Brasil 2014" />
-    <meta property="og:image" content="{{ url('/') . 'ui/img/facebook-share.jpg' }}"/>
+    <meta property="og:description" content="Atrévete a pronosticar los resultados del Mundial 2014" />
+    <meta property="og:image" content="{{ url('/ui/img/facebook-share.jpg') }}"/>
     <meta property="fb:app_id" content="{{Config::get('facebook')['appId']}}" />
 
     <title>Mundialito 2014</title>
@@ -26,7 +26,7 @@
         </div>
     </div>
     @endif
-    @include('share.header')
+    @include('share.headerlight')
     <!-- main -->
     <div id="main" class="container">
         @yield('content')

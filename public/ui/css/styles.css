@@ -1,27 +1,196 @@
-/* line 5, ../sass/styles.scss */
+/* line 1, ../sass/_reset.scss */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, button, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+/* line 2, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 3, ../sass/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+/* line 4, ../sass/_reset.scss */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/* line 5, ../sass/_reset.scss */
+address, caption, cite, code, dfn, th, var {
+  font-style: normal;
+  font-weight: 400; }
+
+/* line 6, ../sass/_reset.scss */
+ul, ol {
+  list-style: none; }
+
+/* line 7, ../sass/_reset.scss */
+caption, th {
+  text-align: left; }
+
+/* line 8, ../sass/_reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 1em; }
+
+/* line 9, ../sass/_reset.scss */
+a {
+  text-decoration: none; }
+
+/* line 10, ../sass/_reset.scss */
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+
+/* line 11, ../sass/_reset.scss */
+a:hover, a:active {
+  outline: 0; }
+
+/* line 12, ../sass/_reset.scss */
+img {
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+/* line 13, ../sass/_reset.scss */
+q:before, q:after {
+  content: ''; }
+
+/* line 14, ../sass/_reset.scss */
+sub, sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+/* line 15, ../sass/_reset.scss */
+sup {
+  top: -0.5em; }
+
+/* line 16, ../sass/_reset.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 17, ../sass/_reset.scss */
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+/* line 18, ../sass/_reset.scss */
+button, input, select, textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle; }
+
+/* line 19, ../sass/_reset.scss */
+button, input {
+  overflow: visible;
+  line-height: normal; }
+
+/* line 20, ../sass/_reset.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/* line 21, ../sass/_reset.scss */
+input:focus {
+  outline: none; }
+
+/* line 22, ../sass/_reset.scss */
+button, input[type=button], input[type=reset], input[type=submit] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+/* line 23, ../sass/_reset.scss */
+input[type=search] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield; }
+
+/* line 24, ../sass/_reset.scss */
+input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none; }
+
+/* line 25, ../sass/_reset.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+/* line 13, ../sass/styles.scss */
 body {
-  min-width: 960px;
   font-family: "Arial", sans-serif;
   font-size: 14px;
   line-height: 1.4em;
-  background: #00164f url(../img/main_background.jpg) no-repeat center top; }
+  background: #00164f url(../img/main_background.jpg) no-repeat center top;
+  background-attachment: fixed; }
 
-/* line 13, ../sass/styles.scss */
-.special_font, .button {
+/* line 23, ../sass/styles.scss */
+.special_font, h1, h2, h3, h4, h5, h6, .button, #header #main_menu, #header #user_data, #main #prediction_table .date_row, #main #prediction_table .match .team-a label, #main #prediction_table .match .team-b label {
   font-family: 'Asap', sans-serif;
   font-weight: 400px; }
 
-/* line 18, ../sass/styles.scss */
+/* line 30, ../sass/styles.scss */
 .container {
-  width: 960px;
+  width: 100%;
   margin: 0 auto; }
 
-/* line 23, ../sass/styles.scss */
+/* line 34, ../sass/styles.scss */
+.row {
+  max-width: 800px;
+  min-width: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 44, ../sass/styles.scss */
+.clear:before, .row:before, #header #user_data:before, #main #prediction_table .match:before, .clear:after, .row:after, #header #user_data:after, #main #prediction_table .match:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both; }
+
+/* line 51, ../sass/styles.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: #fff; }
+
+/* line 57, ../sass/styles.scss */
+h1 {
+  font-size: 36px; }
+
+/* line 58, ../sass/styles.scss */
+p {
+  color: #fff;
+  margin: 10px 0; }
+
+/* line 63, ../sass/styles.scss */
+a {
+  text-decoration: none; }
+
+/* line 69, ../sass/styles.scss */
+.text_shadow, h1, h2, h3, h4, h5, h6, p, #header #user_data {
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4); }
+
+/* line 75, ../sass/styles.scss */
 .button {
   border: none;
   line-height: 50px;
   padding: 0 30px 10px;
   font-size: 16px;
+  color: white;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -29,11 +198,29 @@ body {
   border-radius: 4px;
   -webkit-box-shadow: 0px -8px 0px rgba(0, 0, 0, 0.5) inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
   -moz-box-shadow: 0px -8px 0px rgba(0, 0, 0, 0.5) inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px -8px 0px rgba(0, 0, 0, 0.5) inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8); }
-  /* line 32, ../sass/styles.scss */
+  box-shadow: 0px -8px 0px rgba(0, 0, 0, 0.5) inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
+  background-color: #00bb4c;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF00BB4C', endColorstr='#FF00AF3B');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00bb4c), color-stop(100%, #00af3b));
+  background-image: -webkit-linear-gradient(top, #00bb4c 0%, #00af3b 100%);
+  background-image: -moz-linear-gradient(top, #00bb4c 0%, #00af3b 100%);
+  background-image: -o-linear-gradient(top, #00bb4c 0%, #00af3b 100%);
+  background-image: linear-gradient(top, #00bb4c 0%, #00af3b 100%); }
+  /* line 89, ../sass/styles.scss */
   .button span {
     display: inline-block; }
-  /* line 35, ../sass/styles.scss */
+  /* line 92, ../sass/styles.scss */
+  .button.red {
+    background-color: #ff2e45;
+    *zoom: 1;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF2E45', endColorstr='#FFFF2438');
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2e45), color-stop(100%, #ff2438));
+    background-image: -webkit-linear-gradient(top, #ff2e45 0%, #ff2438 100%);
+    background-image: -moz-linear-gradient(top, #ff2e45 0%, #ff2438 100%);
+    background-image: -o-linear-gradient(top, #ff2e45 0%, #ff2438 100%);
+    background-image: linear-gradient(top, #ff2e45 0%, #ff2438 100%); }
+  /* line 99, ../sass/styles.scss */
   .button.fb_blue {
     color: #fff;
     background-color: #6199ef;
@@ -47,11 +234,11 @@ body {
     -webkit-box-shadow: 0px -8px 0px #3d60c0 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
     -moz-box-shadow: 0px -8px 0px #3d60c0 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
     box-shadow: 0px -8px 0px #3d60c0 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8); }
-    /* line 41, ../sass/styles.scss */
+    /* line 105, ../sass/styles.scss */
     .button.fb_blue span {
       padding-left: 25px;
       background: url(../img/fb_icon.png) no-repeat left center; }
-  /* line 46, ../sass/styles.scss */
+  /* line 110, ../sass/styles.scss */
   .button:hover {
     cursor: pointer;
     color: #311e0c;
@@ -67,7 +254,7 @@ body {
     -moz-box-shadow: 0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
     box-shadow: 0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8); }
 
-/* line 58, ../sass/styles.scss */
+/* line 123, ../sass/styles.scss */
 #intro_login {
   width: 320px;
   margin: 0 auto;
@@ -75,17 +262,327 @@ body {
   text-align: center;
   color: #fff;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4); }
-  /* line 66, ../sass/styles.scss */
-  #intro_login .special_font, #intro_login .button {
+  /* line 131, ../sass/styles.scss */
+  #intro_login .special_font, #intro_login h1, #intro_login h2, #intro_login h3, #intro_login h4, #intro_login h5, #intro_login h6, #intro_login .button, #intro_login #header #main_menu, #header #intro_login #main_menu, #intro_login #header #user_data, #header #intro_login #user_data, #intro_login #main #prediction_table .date_row, #main #prediction_table #intro_login .date_row, #intro_login #main #prediction_table .match .team-a label, #main #prediction_table .match .team-a #intro_login label, #intro_login #main #prediction_table .match .team-b label, #main #prediction_table .match .team-b #intro_login label {
     font-size: 19px; }
-  /* line 69, ../sass/styles.scss */
+  /* line 134, ../sass/styles.scss */
   #intro_login #login_logo {
     overflow: hidden;
     text-indent: -9999px;
     height: 40px;
     margin-top: -16px;
     background: url(../img/logo.png) center no-repeat; }
-  /* line 76, ../sass/styles.scss */
+  /* line 141, ../sass/styles.scss */
+  #intro_login p {
+    margin: 20px 0; }
+  /* line 144, ../sass/styles.scss */
   #intro_login #login_button {
     display: block;
     width: 100%; }
+
+/* line 152, ../sass/styles.scss */
+#notification_box {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  z-index: 10000;
+  background: #fff;
+  -webkit-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8); }
+  /* line 163, ../sass/styles.scss */
+  #notification_box ul {
+    list-style: disc; }
+  /* line 166, ../sass/styles.scss */
+  #notification_box p, #notification_box li {
+    margin: 10px; }
+  /* line 169, ../sass/styles.scss */
+  #notification_box.success {
+    color: #fff;
+    background: #00BB4C; }
+  /* line 173, ../sass/styles.scss */
+  #notification_box.error {
+    color: #fff;
+    background: #FF3246; }
+
+/* line 181, ../sass/styles.scss */
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999; }
+  /* line 191, ../sass/styles.scss */
+  #modal #modal_box {
+    position: absolute;
+    left: 50%;
+    min-width: 320px;
+    max-width: 400px;
+    margin-top: 200px;
+    margin-left: -200px;
+    text-align: center; }
+    /* line 201, ../sass/styles.scss */
+    #modal #modal_box p {
+      padding: 30px;
+      margin: 10px 0;
+      line-height: 1.6em;
+      color: #333;
+      background: #fff;
+      text-shadow: none;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
+      -moz-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8); }
+    /* line 212, ../sass/styles.scss */
+    #modal #modal_box button {
+      margin: 10px; }
+
+/* line 220, ../sass/styles.scss */
+#header {
+  padding-top: 20px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, rgba(0, 0, 0, 0.75)), color-stop(50%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%); }
+  /* line 224, ../sass/styles.scss */
+  #header .row:first-child {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+  /* line 229, ../sass/styles.scss */
+  #header .row:last-child {
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+  /* line 235, ../sass/styles.scss */
+  #header #logo {
+    float: left;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 275px;
+    height: 40px;
+    background: url(../img/logo.png) center no-repeat; }
+  /* line 244, ../sass/styles.scss */
+  #header #main_menu {
+    float: right;
+    list-style: none;
+    font-size: 20px; }
+    /* line 250, ../sass/styles.scss */
+    #header #main_menu li {
+      float: left;
+      margin-left: 20px;
+      line-height: 40px; }
+      /* line 255, ../sass/styles.scss */
+      #header #main_menu li a {
+        color: white; }
+      /* line 258, ../sass/styles.scss */
+      #header #main_menu li:hover a, #header #main_menu li.current a {
+        color: #FFC934; }
+  /* line 264, ../sass/styles.scss */
+  #header #user_data {
+    padding-bottom: 20px; }
+    /* line 270, ../sass/styles.scss */
+    #header #user_data #user_photo {
+      overflow: hidden;
+      float: left;
+      border: 5px solid white;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      -ms-border-radius: 100px;
+      -o-border-radius: 100px;
+      border-radius: 100px;
+      background: white;
+      -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); }
+    /* line 278, ../sass/styles.scss */
+    #header #user_data #user_name {
+      padding-top: 25px;
+      padding-left: 15px;
+      font-size: 35px;
+      color: white;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 35px; }
+    /* line 287, ../sass/styles.scss */
+    #header #user_data #user_position {
+      padding-left: 15px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 24px;
+      line-height: 24px; }
+      /* line 292, ../sass/styles.scss */
+      #header #user_data #user_position:hover {
+        color: #FFC934; }
+
+/* line 302, ../sass/styles.scss */
+#main .row:first-child {
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.25); }
+/* line 306, ../sass/styles.scss */
+#main .row:last-child {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+/* line 312, ../sass/styles.scss */
+#main #prediction_table {
+  text-align: center; }
+  /* line 314, ../sass/styles.scss */
+  #main #prediction_table .date_row {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    background: white; }
+  /* line 322, ../sass/styles.scss */
+  #main #prediction_table .match {
+    padding: 10px 20px;
+    border-top: 1px solid #222;
+    border-bottom: #555 solid 1px;
+    background: #333;
+    -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); }
+    /* line 330, ../sass/styles.scss */
+    #main #prediction_table .match .prediction {
+      float: left;
+      width: 20%;
+      line-height: 48px;
+      color: white;
+      font-size: 18px; }
+    /* line 337, ../sass/styles.scss */
+    #main #prediction_table .match .team-a, #main #prediction_table .match .team-b {
+      float: left;
+      width: 40%; }
+      /* line 341, ../sass/styles.scss */
+      #main #prediction_table .match .team-a label, #main #prediction_table .match .team-b label {
+        float: left;
+        color: white;
+        display: inline-block;
+        width: 110px;
+        padding-left: 55px;
+        margin-right: 10px;
+        text-align: left;
+        font-size: 16px;
+        background-repeat: no-repeat;
+        background-position: left center;
+        line-height: 48px;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+        /* line 356, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.ar, #main #prediction_table .match .team-b label.ar {
+          background-image: url(../img/flags/x48/ar.png); }
+        /* line 357, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.be, #main #prediction_table .match .team-b label.be {
+          background-image: url(../img/flags/x48/be.png); }
+        /* line 358, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.br, #main #prediction_table .match .team-b label.br {
+          background-image: url(../img/flags/x48/br.png); }
+        /* line 359, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.ch, #main #prediction_table .match .team-b label.ch {
+          background-image: url(../img/flags/x48/ch.png); }
+        /* line 360, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.cl, #main #prediction_table .match .team-b label.cl {
+          background-image: url(../img/flags/x48/cl.png); }
+        /* line 361, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.co, #main #prediction_table .match .team-b label.co {
+          background-image: url(../img/flags/x48/co.png); }
+        /* line 362, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.cr, #main #prediction_table .match .team-b label.cr {
+          background-image: url(../img/flags/x48/cr.png); }
+        /* line 363, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.de, #main #prediction_table .match .team-b label.de {
+          background-image: url(../img/flags/x48/de.png); }
+        /* line 364, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.dz, #main #prediction_table .match .team-b label.dz {
+          background-image: url(../img/flags/x48/dz.png); }
+        /* line 365, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.fr, #main #prediction_table .match .team-b label.fr {
+          background-image: url(../img/flags/x48/fr.png); }
+        /* line 366, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.gr, #main #prediction_table .match .team-b label.gr {
+          background-image: url(../img/flags/x48/gr.png); }
+        /* line 367, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.mx, #main #prediction_table .match .team-b label.mx {
+          background-image: url(../img/flags/x48/mx.png); }
+        /* line 368, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.ng, #main #prediction_table .match .team-b label.ng {
+          background-image: url(../img/flags/x48/ng.png); }
+        /* line 369, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.nl, #main #prediction_table .match .team-b label.nl {
+          background-image: url(../img/flags/x48/nl.png); }
+        /* line 370, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.us, #main #prediction_table .match .team-b label.us {
+          background-image: url(../img/flags/x48/us.png); }
+        /* line 371, ../sass/styles.scss */
+        #main #prediction_table .match .team-a label.uy, #main #prediction_table .match .team-b label.uy {
+          background-image: url(../img/flags/x48/uy.png); }
+      /* line 373, ../sass/styles.scss */
+      #main #prediction_table .match .team-a input, #main #prediction_table .match .team-b input {
+        float: left;
+        padding: 10px;
+        font-size: 24px;
+        line-height: 28px;
+        width: 40px;
+        border: none;
+        text-align: center;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8);
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8); }
+    /* line 386, ../sass/styles.scss */
+    #main #prediction_table .match .team-b label {
+      float: right;
+      padding-left: 0;
+      padding-right: 55px;
+      margin-right: 0;
+      margin-left: 10px;
+      text-align: right;
+      background-position: right center; }
+    /* line 395, ../sass/styles.scss */
+    #main #prediction_table .match .team-b input {
+      float: right; }
+  /* line 400, ../sass/styles.scss */
+  #main #prediction_table button.yellow {
+    display: block;
+    width: 100%;
+    margin: 20px 0 0; }
+
+/* line 410, ../sass/styles.scss */
+#footer {
+  padding-bottom: 40px;
+  text-align: center; }
+  /* line 414, ../sass/styles.scss */
+  #footer .row:first-child {
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.25); }
+  /* line 418, ../sass/styles.scss */
+  #footer .footer_rights {
+    color: rgba(255, 255, 255, 0.5); }
+    /* line 421, ../sass/styles.scss */
+    #footer .footer_rights a {
+      color: rgba(255, 255, 255, 0.8); }
+      /* line 424, ../sass/styles.scss */
+      #footer .footer_rights a:hover {
+        color: white;
+        border-bottom: 1px dotted white; }

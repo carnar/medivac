@@ -39,6 +39,10 @@ class PredictionController extends \BaseController {
 	 */
 	public function store()
 	{
+		$scoreValidator = new ScoreValidator(Input::get());
+		if($scoreValidator->fails()) return Redirect::back()
+												->withErrors(['Debe ingresar todos los marcadores.']);
+
 		$matches = Match::all();
 		foreach ($matches as $match) {
 			$prediction = [];
@@ -93,7 +97,7 @@ class PredictionController extends \BaseController {
 
 			}
 			$data->user_predictions = $userPredictions;
-			return View::make('prediction.show')->with('data', $data);
+			return View::make('prediction.shownew')->with('data', $data);
 		} 
 		catch (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
 			// echo "404";
