@@ -28,7 +28,7 @@ class PredictionController extends \BaseController {
 		}
 		$data->matches = $newMatches;
 		// exit;
-		return View::make('prediction.form')->with('data', $data);
+		return View::make('prediction.formnew')->with('data', $data);
 	}
 
 
