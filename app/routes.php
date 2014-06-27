@@ -1,6 +1,6 @@
 <?php
 
-Route::get('login/fb', function() {
+Route::get('/login/fb', function() {
     $facebook = new Facebook(Config::get('facebook'));
     $params = array(
         'redirect_uri' => url('/login/fb/callback'),
@@ -9,7 +9,7 @@ Route::get('login/fb', function() {
     return Redirect::to($facebook->getLoginUrl($params));
 });
 
-Route::get('login/fb/callback', function() {
+Route::get('/login/fb/callback', function() {
     $code = Input::get('code');
     if (strlen($code) == 0) return Redirect::to('/')->with('message', 'There was an error communicating with Facebook');
  
@@ -94,16 +94,18 @@ Route::resource('/prediction', 'PredictionController',
 Route::get('scores', 'ScoreController@index');
 Route::get('scores/edit', 'ScoreController@edit');
 Route::post('scores', 'ScoreController@update');
+Route::get('rules', function(){ return View::make('share.rules'); });
 
 // Route::resource('carnar', 'CarnarController');
 // Route::get('test', function()
 // {
-// 	// assign points;
-// 	$points = new Points(User::all(), Match::all());
-// 	$points->assignment();
+//  // assign points;
+//  $points = new Points(User::all(), Match::all());
+//  $points->assignment();
 // });
 
 Route::get('test', function()
 {
-	return View::make('share.test');
+    dd(Auth::user()->predictions()->first()->id);
+    return View::make('share.test');
 });

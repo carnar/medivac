@@ -97,7 +97,7 @@ class PredictionController extends \BaseController {
 
 			}
 			$data->user_predictions = $userPredictions;
-			return View::make('prediction.show')->with('data', $data);
+			return View::make('prediction.shownew')->with('data', $data);
 		} 
 		catch (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
 			// echo "404";
