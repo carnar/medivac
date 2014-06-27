@@ -39,6 +39,10 @@ class PredictionController extends \BaseController {
 	 */
 	public function store()
 	{
+		$scoreValidator = new ScoreValidator(Input::get());
+		if($scoreValidator->fails()) return Redirect::back()
+												->withErrors(['Debe ingresar todos los marcadores.']);
+
 		$matches = Match::all();
 		foreach ($matches as $match) {
 			$prediction = [];

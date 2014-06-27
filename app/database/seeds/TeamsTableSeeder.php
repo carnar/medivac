@@ -28,7 +28,7 @@ class TeamsTableSeeder extends Seeder {
 				    ["name" => "Argentina", "country_code" => "AR", "code" => "ARG"],
 				    ["name" => "Bosnia y Herzegovina", "country_code" => "", "code" => "BIH"],
 				    ["name" => "Irán", "country_code" => "", "code" => "IRN"],
-				    ["name" => "Nigeria", "country_code" => "BG", "code" => "NGA"],
+				    ["name" => "Nigeria", "country_code" => "NG", "code" => "NGA"],
 				    ["name" => "Alemania", "country_code" => "DE", "code" => "GER"],
 				    ["name" => "Portugal", "country_code" => "", "code" => "POR"],
 				    ["name" => "Ghana", "country_code" => "", "code" => "GHA"],
