@@ -81,7 +81,9 @@ Route::get('/terminos', function()
 
 Route::get('/leaderboard', function()
 {
-    return View::make('leaderboard.countdown');
+    $data = Position::all();
+    return View::make('leaderboard.index')->with('data', $data);
+    // return View::make('leaderboard.countdown');
 });
 
 Route::resource('/prediction', 'PredictionController',
@@ -106,6 +108,8 @@ Route::get('rules', function(){ return View::make('share.rules'); });
 
 Route::get('test', function()
 {
+	$leaderboard = new Leaderboard();
+	$leaderboard->make();
     dd(url('/'));
     return View::make('share.test');
 });
