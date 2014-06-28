@@ -106,6 +106,8 @@ Route::get('rules', function(){ return View::make('share.rules'); });
 
 Route::get('test', function()
 {
+	$leaderboard = new Leaderboard();
+	$leaderboard->make();
     dd(url('/'));
     return View::make('share.test');
 });
