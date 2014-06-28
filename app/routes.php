@@ -81,7 +81,9 @@ Route::get('/terminos', function()
 
 Route::get('/leaderboard', function()
 {
-    return View::make('leaderboard.countdown');
+    $data = Position::all();
+    return View::make('leaderboard.index')->with('data', $data);
+    // return View::make('leaderboard.countdown');
 });
 
 Route::resource('/prediction', 'PredictionController',
