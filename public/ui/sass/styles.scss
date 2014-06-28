@@ -48,6 +48,10 @@ body{
         clear: both;
     }
 }
+hr{
+    border-top: 1px solid rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+}
 h1, h2, h3, h4, h5, h6{
     @extend .special_font;
     font-weight: 400;
@@ -270,6 +274,8 @@ a{
         #user_photo{
             overflow: hidden;
             float: left;
+            width: 100px;
+            height: 100px;
             border: 5px solid white;
             @include border-radius(100px);
             background: white;
@@ -308,7 +314,9 @@ a{
         border-bottom: 1px solid rgba(255,255,255,0.25);
     }
     
-    //prediction_table
+    /////////////////////////////////////
+    //prediction table
+    /////////////////////////////////////
     #prediction_table{
         text-align: center;
         .date_row{
@@ -403,6 +411,125 @@ a{
             margin: 20px 0 0;
         }
     }
+    /////////////////////////////////////
+    //positions_table
+    /////////////////////////////////////
+    #positions_table{
+        @extend .clear;
+        margin-top: 20px;
+        
+        li{
+            @include box-sizing(border-box);
+            opacity: 0;
+            position: relative;
+            height: 57px;
+            min-width: 120px;
+            margin-bottom: 3px;
+            
+            
+            .user_trail{
+                @extend .special_font;
+                position: relative;
+                display: block;
+                height: 57px;
+                margin-right: 45px;
+                background: url(../img/position_trail.png) left top no-repeat;
+                @include border-radius(100px);
+                @include box-shadow(25px 0px 10px rgba(0,0,0,0.2));
+                
+                p{ color: rgba(255,255,255, 0.7); }
+            
+                &:hover{
+                    background-position: left bottom;
+                    p{ color: white; }
+                }
+            }
+            .user_data{
+                float: left;
+                height: 100%;
+                
+                p{
+                    margin: 0;
+                    line-height: 57px;
+                    font-size: 18px;
+                    margin-right: 10px;
+                }
+                .user_name{
+                    @include ellipsis();
+                    float: right;
+                    width: 150px;
+                }
+                .user_points{
+                    font-size: 16px;
+                    float: left;
+                }
+            }
+            .user_position{
+                float: right;
+                margin: 0 40px 0 0;
+                line-height: 57px;
+                font-size: 18px;
+            }
+            .user_photo{
+                position: absolute;
+                right: -20px;
+                top: 0;
+                overflow: hidden;
+                float: left;
+                width: 50px;
+                height: 50px;
+                border: 3px solid white;
+                @include border-radius(100px);
+                background: white;
+                @include box-shadow(0px 15px 25px rgba(0,0,0,0.5));
+            }
+            
+            //when li is to small
+            &.small{
+                .user_trail:hover{
+                    .user_data{ display: block; }
+                }
+                .user_data{
+                    @include box-sizing(border-box);
+                    z-index: 9999;
+                    display: none;
+                    float: none;
+                    position: absolute;
+                    top: -63px;
+                    right: -59px;
+                    height: 70px;
+                    width: 133px;
+                    padding: 13px 12px;
+                    
+                    background: url(../img/balloon.png) no-repeat center;
+
+                    p{
+                        @include text-shadow(none);
+                        margin: 0;
+                        line-height: 1.2em;
+                        font-size: 16px;
+                        color: #333;
+                    }
+                    .user_name{
+                        float: none;
+                        width: 100%;
+                    }
+                    .user_points{
+                        font-size: 13px;
+                        float: none;
+                        color: #999;
+                    }
+                }
+            }
+            &.selected{
+                p{ color: white; }
+                .user_trail{
+                    background-image: url(../img/position_trail_selected.png);
+                    p{ color: white; }
+                }
+            }
+        }
+    }
 }
 /////////////////////////////////////
 //footer
@@ -427,4 +554,4 @@ a{
             }
         }
     }
-} 
+}

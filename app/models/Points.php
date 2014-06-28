@@ -5,6 +5,7 @@ class Points
 	protected $users;
 	protected $matches;
 	protected $matchesComparison;
+	protected $leaderboard;
 	private $rules = ['guess_result' => 3, 'guess_score' => 1];
 
 	public function __construct($users, $matches)
@@ -12,6 +13,7 @@ class Points
 		$this->users = $users;
 		$this->matches = $matches;
 		$this->matchesComparison = new MatchesComparison();
+		$this->leaderboard = new Leaderboard();
 	}
 
 	public function assignment()
@@ -19,6 +21,12 @@ class Points
 		foreach ($this->users as $user) {
 			$this->assignToUser($user, $this->matches);
 		}
+		$this->leaderboard->make();
+	}
+
+	public function createLeaderboard($user)
+	{
+		// $total = Prediction::groupBy($user->id)->get('')first();
 	}
 
 	/**
