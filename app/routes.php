@@ -54,14 +54,14 @@ Route::get('/', function()
     if (Auth::check()) {
         $data = Auth::user();
 
-	    if($data['playing'])
-	    {
 	        return Redirect::to('/leaderboard');
-	    }
-	    else
-	    {
-	        return Redirect::to('/prediction/create');
-	    }
+     //    if($data['playing'])
+     //    {
+	    // }
+	    // else
+	    // {
+	    //     return Redirect::to('/prediction/create');
+	    // }
     }
 
     return View::make('home.index');
@@ -85,7 +85,7 @@ Route::get('/leaderboard', function()
 });
 
 Route::resource('/prediction', 'PredictionController',
-                array('only' => array('create', 'show', 'store')));
+                array('only' => array('show')));
 
 
 // Route::resource('score', 'ScoreController',
