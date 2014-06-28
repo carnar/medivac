@@ -3,7 +3,7 @@
         <div class="row">
             <h1 id="logo"><a href="#leaderboard">Mundialito 2014</a></h1>
             <ul id="main_menu">
-                @if(Auth::check() && isset(Auth::user()->id))
+                @if(Auth::check() && isset(Auth::user()->id) && Auth::user()->playing)
                 <li><a href="/prediction/{{Auth::user()->id}}">Mis predicciones</a></li>
                 @endif
                 <li><a href="/leaderboard">Posiciones</a></li>
