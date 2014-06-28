@@ -16,7 +16,14 @@ class PredictionController extends \BaseController {
 		$data->user_id = Auth::user()->id;
 		$data->user_name = Auth::user()->name;
 		$data->user_photo = Auth::user()->photo;
-
+		if(isset(Auth::user()->position()->get()->first()->position))
+		{
+			$data->user_position = $user->position()->get()->first()->position;
+		}
+		else
+		{
+			$data->user_position = '';
+		}
 		$matches = Match::all();
 		$newMatches = [];
 		foreach ($matches as $match) {
@@ -80,6 +87,14 @@ class PredictionController extends \BaseController {
 			$data->user_id = $user->id;
 			$data->user_name = $user->name;
 			$data->user_photo = $user->photo;
+			if(isset($user->position()->get()->first()->position))
+			{
+				$data->user_position = $user->position()->get()->first()->position;
+			}
+			else
+			{
+				$data->user_position = '';
+			}
 
 			$userPredictions = [];
 			foreach ($predictions as $prediction) {

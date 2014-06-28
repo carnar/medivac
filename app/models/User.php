@@ -48,8 +48,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     	return $this->hasMany('Prediction')->orderBy('match_id');
     }
 
-    // public function position()
-    // {
-    // 	return $this->hasOne('Position');
-    // }
+    public function position()
+    {
+    	return $this->hasOne('Position');
+    }
 }

@@ -21,7 +21,7 @@ class Points
 		foreach ($this->users as $user) {
 			$this->assignToUser($user, $this->matches);
 		}
-		// $this->createLeaderboard();
+		$this->leaderboard->make();
 	}
 
 	public function createLeaderboard($user)

@@ -16,8 +16,10 @@ class CreatePositionsTable extends Migration {
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
 			$table->string('name');
+			$table->string('photo');
 			$table->integer('points')->nullable();
 			$table->integer('position')->nullable();
+			$table->integer('percentage')->nullable();
 			$table->timestamps();
 		});
 	}
