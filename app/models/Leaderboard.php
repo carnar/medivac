@@ -22,7 +22,7 @@ class Leaderboard {
 				if($player->points == $value->points)
 				{
 					$player->position = $key + 1;
-					$player->percentage = $player->points * 100 / $maxPoints;
+					$player->percentage = ($player->points * 50 / $maxPoints) + 50;
 					$player->save();
 					break;
 				} 
@@ -38,7 +38,7 @@ class Leaderboard {
 
 	private function positions()
 	{
-		return DB::select(DB::raw('SELECT u.id as user_id, u.name, u.photo, sum(p.points) AS points FROM predictions p, users u WHERE u.id = p.user_id GROUP BY u.id ORDER BY u.name ASC'));
+		return DB::select(DB::raw('SELECT u.id as user_id, u.name, u.photo, sum(p.points) AS points FROM predictions p, users u WHERE u.id = p.user_id GROUP BY u.id ORDER BY points DESC'));
 	}
 
 	private function update($positions)
