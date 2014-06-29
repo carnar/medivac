@@ -2,8 +2,12 @@
 @section('content')
         <div class="row">
            <h1>Posiciones</h1>
-           <p> Descubre cual es tu posición. </p>
+           <p> Descubre quién ganará. </p>
            <hr />
+          <div id="search_input_container">
+               <label for="search_input">Encuéntrate</label>
+               <input type="text" id="search_input" placeholder="Nombre, #posición" />
+           </div>
            <ul id="positions_table">
            @foreach($data as $player)
                <li id="{{ $player->user_id }}" style="width: {{ $player->percentage }}%;" >
