@@ -13,7 +13,7 @@
                             <p class="user_points">{{ $player->points }}pts</p>
                         </div>
                         <p class="user_position">#{{ $player->position }}</p>
-                        <div class="user_photo"><img src="{{ $player->photo }}"></div>
+                        <div class="user_photo"><img src="{{ $player->photo }}?type=small"></div>
                     </a>
                </li>
             @endforeach
