@@ -14,16 +14,16 @@ $( document ).ready(function() {
         $("#modal").fadeOut(200);
     });
     //on resize for small user trail
-    $(window).resize(function(){
-        $("#positions_table li").each(function(){
-            if($(this).width() < 320){
-                $(this).addClass("small");
-            }
-            else{
-                $(this).removeClass("small");
-            }
-        });
-    });
+    // $(window).resize(function(){
+    //     $("#positions_table li").each(function(){
+    //         if($(this).width() < 320){
+    //             $(this).addClass("small");
+    //         }
+    //         else{
+    //             $(this).removeClass("small");
+    //         }
+    //     });
+    // });
     //move to position
     var userHash = window.location.hash.substr(1)
     var user = $("#" + userHash);
