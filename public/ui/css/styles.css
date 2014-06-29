@@ -135,7 +135,7 @@ body {
   background-attachment: fixed; }
 
 /* line 23, ../sass/styles.scss */
-.special_font, h1, h2, h3, h4, h5, h6, .button, #header #main_menu, #header #user_data, #main #prediction_table .date_row, #main #prediction_table .match .team-a label, #main #prediction_table .match .team-b label, #main #positions_table li .user_trail {
+.special_font, h1, h2, h3, h4, h5, h6, .button, #header #main_menu, #header #user_data, #main #prediction_table .date_row, #main #prediction_table .match .team-a label, #main #prediction_table .match .team-b label, #main #search_input_container, #main #positions_table li .user_trail {
   font-family: 'Asap', sans-serif;
   font-weight: 400px; }
 
@@ -186,10 +186,42 @@ a {
   text-decoration: none; }
 
 /* line 73, ../sass/styles.scss */
-.text_shadow, h1, h2, h3, h4, h5, h6, p, #header #user_data {
+.text_shadow, h1, h2, h3, h4, h5, h6, p, #header #user_data, #main #search_input_container label {
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4); }
 
-/* line 79, ../sass/styles.scss */
+/* line 76, ../sass/styles.scss */
+#scrollTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 75px;
+  height: 45px;
+  padding-top: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  background: white url(../img/scrollTop.png) no-repeat center;
+  overflow: hidden;
+  text-indent: -9999px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8); }
+  /* line 94, ../sass/styles.scss */
+  #scrollTop:hover {
+    cursor: pointer;
+    background-color: #f2f2f2;
+    -webkit-box-shadow: 0px 20px 35px black;
+    -moz-box-shadow: 0px 20px 35px black;
+    box-shadow: 0px 20px 35px black; }
+
+/* line 103, ../sass/styles.scss */
 .button {
   border: none;
   line-height: 50px;
@@ -212,10 +244,10 @@ a {
   background-image: -moz-linear-gradient(top, #00bb4c 0%, #00af3b 100%);
   background-image: -o-linear-gradient(top, #00bb4c 0%, #00af3b 100%);
   background-image: linear-gradient(top, #00bb4c 0%, #00af3b 100%); }
-  /* line 93, ../sass/styles.scss */
+  /* line 117, ../sass/styles.scss */
   .button span {
     display: inline-block; }
-  /* line 96, ../sass/styles.scss */
+  /* line 120, ../sass/styles.scss */
   .button.red {
     background-color: #ff2e45;
     *zoom: 1;
@@ -225,7 +257,7 @@ a {
     background-image: -moz-linear-gradient(top, #ff2e45 0%, #ff2438 100%);
     background-image: -o-linear-gradient(top, #ff2e45 0%, #ff2438 100%);
     background-image: linear-gradient(top, #ff2e45 0%, #ff2438 100%); }
-  /* line 103, ../sass/styles.scss */
+  /* line 127, ../sass/styles.scss */
   .button.fb_blue {
     color: #fff;
     background-color: #6199ef;
@@ -239,11 +271,11 @@ a {
     -webkit-box-shadow: 0px -8px 0px #3d60c0 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
     -moz-box-shadow: 0px -8px 0px #3d60c0 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
     box-shadow: 0px -8px 0px #3d60c0 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8); }
-    /* line 109, ../sass/styles.scss */
+    /* line 133, ../sass/styles.scss */
     .button.fb_blue span {
       padding-left: 25px;
       background: url(../img/fb_icon.png) no-repeat left center; }
-  /* line 114, ../sass/styles.scss */
+  /* line 138, ../sass/styles.scss */
   .button:hover {
     cursor: pointer;
     color: #311e0c;
@@ -255,11 +287,11 @@ a {
     background-image: -moz-linear-gradient(top, #ffd155 0%, #ffc843 100%);
     background-image: -o-linear-gradient(top, #ffd155 0%, #ffc843 100%);
     background-image: linear-gradient(top, #ffd155 0%, #ffc843 100%);
-    -webkit-box-shadow: 0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
-    -moz-box-shadow: 0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8);
-    box-shadow: 0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px rgba(0, 0, 0, 0.8); }
+    -webkit-box-shadow: 0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px black;
+    -moz-box-shadow: 0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px black;
+    box-shadow: 0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255, 255, 255, 0.2) inset, 0px 20px 35px black; }
 
-/* line 127, ../sass/styles.scss */
+/* line 151, ../sass/styles.scss */
 #intro_login {
   width: 320px;
   margin: 0 auto;
@@ -267,25 +299,25 @@ a {
   text-align: center;
   color: #fff;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4); }
-  /* line 135, ../sass/styles.scss */
-  #intro_login .special_font, #intro_login h1, #intro_login h2, #intro_login h3, #intro_login h4, #intro_login h5, #intro_login h6, #intro_login .button, #intro_login #header #main_menu, #header #intro_login #main_menu, #intro_login #header #user_data, #header #intro_login #user_data, #intro_login #main #prediction_table .date_row, #main #prediction_table #intro_login .date_row, #intro_login #main #prediction_table .match .team-a label, #main #prediction_table .match .team-a #intro_login label, #intro_login #main #prediction_table .match .team-b label, #main #prediction_table .match .team-b #intro_login label, #intro_login #main #positions_table li .user_trail, #main #positions_table li #intro_login .user_trail {
+  /* line 159, ../sass/styles.scss */
+  #intro_login .special_font, #intro_login h1, #intro_login h2, #intro_login h3, #intro_login h4, #intro_login h5, #intro_login h6, #intro_login .button, #intro_login #header #main_menu, #header #intro_login #main_menu, #intro_login #header #user_data, #header #intro_login #user_data, #intro_login #main #prediction_table .date_row, #main #prediction_table #intro_login .date_row, #intro_login #main #prediction_table .match .team-a label, #main #prediction_table .match .team-a #intro_login label, #intro_login #main #prediction_table .match .team-b label, #main #prediction_table .match .team-b #intro_login label, #intro_login #main #search_input_container, #main #intro_login #search_input_container, #intro_login #main #positions_table li .user_trail, #main #positions_table li #intro_login .user_trail {
     font-size: 19px; }
-  /* line 138, ../sass/styles.scss */
+  /* line 162, ../sass/styles.scss */
   #intro_login #login_logo {
     overflow: hidden;
     text-indent: -9999px;
     height: 40px;
     margin-top: -16px;
     background: url(../img/logo.png) center no-repeat; }
-  /* line 145, ../sass/styles.scss */
+  /* line 169, ../sass/styles.scss */
   #intro_login p {
     margin: 20px 0; }
-  /* line 148, ../sass/styles.scss */
+  /* line 172, ../sass/styles.scss */
   #intro_login #login_button {
     display: block;
     width: 100%; }
 
-/* line 156, ../sass/styles.scss */
+/* line 180, ../sass/styles.scss */
 #notification_box {
   display: none;
   position: fixed;
@@ -298,22 +330,22 @@ a {
   -webkit-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
   -moz-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
   box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8); }
-  /* line 167, ../sass/styles.scss */
+  /* line 191, ../sass/styles.scss */
   #notification_box ul {
     list-style: disc; }
-  /* line 170, ../sass/styles.scss */
+  /* line 194, ../sass/styles.scss */
   #notification_box p, #notification_box li {
     margin: 10px; }
-  /* line 173, ../sass/styles.scss */
+  /* line 197, ../sass/styles.scss */
   #notification_box.success {
     color: #fff;
     background: #00BB4C; }
-  /* line 177, ../sass/styles.scss */
+  /* line 201, ../sass/styles.scss */
   #notification_box.error {
     color: #fff;
     background: #FF3246; }
 
-/* line 185, ../sass/styles.scss */
+/* line 209, ../sass/styles.scss */
 #modal {
   display: none;
   position: fixed;
@@ -323,7 +355,7 @@ a {
   bottom: 0;
   background: rgba(0, 0, 0, 0.75);
   z-index: 9999; }
-  /* line 195, ../sass/styles.scss */
+  /* line 219, ../sass/styles.scss */
   #modal #modal_box {
     position: absolute;
     left: 50%;
@@ -332,7 +364,7 @@ a {
     margin-top: 200px;
     margin-left: -200px;
     text-align: center; }
-    /* line 205, ../sass/styles.scss */
+    /* line 229, ../sass/styles.scss */
     #modal #modal_box p {
       padding: 30px;
       margin: 10px 0;
@@ -351,11 +383,11 @@ a {
       -webkit-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
       -moz-box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8);
       box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.8); }
-    /* line 216, ../sass/styles.scss */
+    /* line 240, ../sass/styles.scss */
     #modal #modal_box button {
       margin: 10px; }
 
-/* line 224, ../sass/styles.scss */
+/* line 248, ../sass/styles.scss */
 #header {
   padding-top: 20px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, rgba(0, 0, 0, 0.75)), color-stop(50%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0)));
@@ -363,17 +395,17 @@ a {
   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
   background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
   background-image: linear-gradient(top, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%); }
-  /* line 228, ../sass/styles.scss */
+  /* line 252, ../sass/styles.scss */
   #header .row:first-child {
     padding-top: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
-  /* line 233, ../sass/styles.scss */
+  /* line 257, ../sass/styles.scss */
   #header .row:last-child {
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.25);
     border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
-  /* line 239, ../sass/styles.scss */
+  /* line 263, ../sass/styles.scss */
   #header #logo {
     float: left;
     overflow: hidden;
@@ -381,26 +413,26 @@ a {
     width: 275px;
     height: 40px;
     background: url(../img/logo.png) center no-repeat; }
-  /* line 248, ../sass/styles.scss */
+  /* line 272, ../sass/styles.scss */
   #header #main_menu {
     float: right;
     list-style: none;
     font-size: 20px; }
-    /* line 254, ../sass/styles.scss */
+    /* line 278, ../sass/styles.scss */
     #header #main_menu li {
       float: left;
       margin-left: 20px;
       line-height: 40px; }
-      /* line 259, ../sass/styles.scss */
+      /* line 283, ../sass/styles.scss */
       #header #main_menu li a {
         color: white; }
-      /* line 262, ../sass/styles.scss */
+      /* line 286, ../sass/styles.scss */
       #header #main_menu li:hover a, #header #main_menu li.current a {
         color: #FFC934; }
-  /* line 268, ../sass/styles.scss */
+  /* line 292, ../sass/styles.scss */
   #header #user_data {
     padding-bottom: 20px; }
-    /* line 274, ../sass/styles.scss */
+    /* line 298, ../sass/styles.scss */
     #header #user_data #user_photo {
       overflow: hidden;
       float: left;
@@ -416,7 +448,7 @@ a {
       -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
       box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); }
-    /* line 284, ../sass/styles.scss */
+    /* line 308, ../sass/styles.scss */
     #header #user_data #user_name {
       padding-top: 25px;
       padding-left: 15px;
@@ -427,35 +459,35 @@ a {
       text-overflow: ellipsis;
       white-space: nowrap;
       line-height: 35px; }
-    /* line 293, ../sass/styles.scss */
+    /* line 317, ../sass/styles.scss */
     #header #user_data #user_position {
       padding-left: 15px;
       color: rgba(255, 255, 255, 0.6);
       font-size: 24px;
       line-height: 24px; }
-      /* line 298, ../sass/styles.scss */
+      /* line 322, ../sass/styles.scss */
       #header #user_data #user_position:hover {
         color: #FFC934; }
 
-/* line 308, ../sass/styles.scss */
+/* line 332, ../sass/styles.scss */
 #main .row:first-child {
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.25); }
-/* line 312, ../sass/styles.scss */
+/* line 336, ../sass/styles.scss */
 #main .row:last-child {
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
-/* line 320, ../sass/styles.scss */
+/* line 344, ../sass/styles.scss */
 #main #prediction_table {
   text-align: center; }
-  /* line 322, ../sass/styles.scss */
+  /* line 346, ../sass/styles.scss */
   #main #prediction_table .date_row {
     padding: 10px 20px;
     margin-top: 20px;
     font-size: 18px;
     color: #333;
     background: white; }
-  /* line 330, ../sass/styles.scss */
+  /* line 354, ../sass/styles.scss */
   #main #prediction_table .match {
     padding: 10px 20px;
     border-top: 1px solid #222;
@@ -464,18 +496,18 @@ a {
     -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); }
-    /* line 338, ../sass/styles.scss */
+    /* line 362, ../sass/styles.scss */
     #main #prediction_table .match .prediction {
       float: left;
       width: 20%;
       line-height: 48px;
       color: white;
       font-size: 18px; }
-    /* line 345, ../sass/styles.scss */
+    /* line 369, ../sass/styles.scss */
     #main #prediction_table .match .team-a, #main #prediction_table .match .team-b {
       float: left;
       width: 40%; }
-      /* line 349, ../sass/styles.scss */
+      /* line 373, ../sass/styles.scss */
       #main #prediction_table .match .team-a label, #main #prediction_table .match .team-b label {
         float: left;
         color: white;
@@ -492,55 +524,55 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
-        /* line 364, ../sass/styles.scss */
+        /* line 388, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.ar, #main #prediction_table .match .team-b label.ar {
           background-image: url(../img/flags/x48/ar.png); }
-        /* line 365, ../sass/styles.scss */
+        /* line 389, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.be, #main #prediction_table .match .team-b label.be {
           background-image: url(../img/flags/x48/be.png); }
-        /* line 366, ../sass/styles.scss */
+        /* line 390, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.br, #main #prediction_table .match .team-b label.br {
           background-image: url(../img/flags/x48/br.png); }
-        /* line 367, ../sass/styles.scss */
+        /* line 391, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.ch, #main #prediction_table .match .team-b label.ch {
           background-image: url(../img/flags/x48/ch.png); }
-        /* line 368, ../sass/styles.scss */
+        /* line 392, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.cl, #main #prediction_table .match .team-b label.cl {
           background-image: url(../img/flags/x48/cl.png); }
-        /* line 369, ../sass/styles.scss */
+        /* line 393, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.co, #main #prediction_table .match .team-b label.co {
           background-image: url(../img/flags/x48/co.png); }
-        /* line 370, ../sass/styles.scss */
+        /* line 394, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.cr, #main #prediction_table .match .team-b label.cr {
           background-image: url(../img/flags/x48/cr.png); }
-        /* line 371, ../sass/styles.scss */
+        /* line 395, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.de, #main #prediction_table .match .team-b label.de {
           background-image: url(../img/flags/x48/de.png); }
-        /* line 372, ../sass/styles.scss */
+        /* line 396, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.dz, #main #prediction_table .match .team-b label.dz {
           background-image: url(../img/flags/x48/dz.png); }
-        /* line 373, ../sass/styles.scss */
+        /* line 397, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.fr, #main #prediction_table .match .team-b label.fr {
           background-image: url(../img/flags/x48/fr.png); }
-        /* line 374, ../sass/styles.scss */
+        /* line 398, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.gr, #main #prediction_table .match .team-b label.gr {
           background-image: url(../img/flags/x48/gr.png); }
-        /* line 375, ../sass/styles.scss */
+        /* line 399, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.mx, #main #prediction_table .match .team-b label.mx {
           background-image: url(../img/flags/x48/mx.png); }
-        /* line 376, ../sass/styles.scss */
+        /* line 400, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.ng, #main #prediction_table .match .team-b label.ng {
           background-image: url(../img/flags/x48/ng.png); }
-        /* line 377, ../sass/styles.scss */
+        /* line 401, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.nl, #main #prediction_table .match .team-b label.nl {
           background-image: url(../img/flags/x48/nl.png); }
-        /* line 378, ../sass/styles.scss */
+        /* line 402, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.us, #main #prediction_table .match .team-b label.us {
           background-image: url(../img/flags/x48/us.png); }
-        /* line 379, ../sass/styles.scss */
+        /* line 403, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.uy, #main #prediction_table .match .team-b label.uy {
           background-image: url(../img/flags/x48/uy.png); }
-      /* line 381, ../sass/styles.scss */
+      /* line 405, ../sass/styles.scss */
       #main #prediction_table .match .team-a input, #main #prediction_table .match .team-b input {
         float: left;
         padding: 10px;
@@ -557,7 +589,7 @@ a {
         -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8);
         -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8);
         box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8); }
-    /* line 394, ../sass/styles.scss */
+    /* line 418, ../sass/styles.scss */
     #main #prediction_table .match .team-b label {
       float: right;
       padding-left: 0;
@@ -566,18 +598,43 @@ a {
       margin-left: 10px;
       text-align: right;
       background-position: right center; }
-    /* line 403, ../sass/styles.scss */
+    /* line 427, ../sass/styles.scss */
     #main #prediction_table .match .team-b input {
       float: right; }
-  /* line 408, ../sass/styles.scss */
+  /* line 432, ../sass/styles.scss */
   #main #prediction_table button.yellow {
     display: block;
     width: 100%;
     margin: 20px 0 0; }
-/* line 417, ../sass/styles.scss */
+/* line 441, ../sass/styles.scss */
+#main #search_input_container {
+  margin: 20px 0 10px;
+  color: white; }
+  /* line 446, ../sass/styles.scss */
+  #main #search_input_container label {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px; }
+  /* line 453, ../sass/styles.scss */
+  #main #search_input_container input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
+/* line 463, ../sass/styles.scss */
 #main #positions_table {
   margin-top: 20px; }
-  /* line 421, ../sass/styles.scss */
+  /* line 467, ../sass/styles.scss */
   #main #positions_table li {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -587,7 +644,7 @@ a {
     height: 57px;
     min-width: 120px;
     margin-bottom: 3px; }
-    /* line 430, ../sass/styles.scss */
+    /* line 476, ../sass/styles.scss */
     #main #positions_table li .user_trail {
       position: relative;
       display: block;
@@ -602,26 +659,26 @@ a {
       -webkit-box-shadow: 25px 0px 10px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 25px 0px 10px rgba(0, 0, 0, 0.2);
       box-shadow: 25px 0px 10px rgba(0, 0, 0, 0.2); }
-      /* line 440, ../sass/styles.scss */
+      /* line 486, ../sass/styles.scss */
       #main #positions_table li .user_trail p {
         color: rgba(255, 255, 255, 0.7); }
-      /* line 442, ../sass/styles.scss */
+      /* line 488, ../sass/styles.scss */
       #main #positions_table li .user_trail:hover {
         background-position: left bottom; }
-        /* line 444, ../sass/styles.scss */
+        /* line 490, ../sass/styles.scss */
         #main #positions_table li .user_trail:hover p {
           color: white; }
-    /* line 447, ../sass/styles.scss */
+    /* line 493, ../sass/styles.scss */
     #main #positions_table li .user_data {
       float: left;
       height: 100%; }
-      /* line 451, ../sass/styles.scss */
+      /* line 497, ../sass/styles.scss */
       #main #positions_table li .user_data p {
         margin: 0;
         line-height: 57px;
         font-size: 18px;
         margin-right: 10px; }
-      /* line 457, ../sass/styles.scss */
+      /* line 503, ../sass/styles.scss */
       #main #positions_table li .user_data .user_name {
         display: block;
         overflow: hidden;
@@ -629,17 +686,17 @@ a {
         white-space: nowrap;
         float: right;
         width: 150px; }
-      /* line 462, ../sass/styles.scss */
+      /* line 508, ../sass/styles.scss */
       #main #positions_table li .user_data .user_points {
         font-size: 16px;
         float: left; }
-    /* line 467, ../sass/styles.scss */
+    /* line 513, ../sass/styles.scss */
     #main #positions_table li .user_position {
       float: right;
       margin: 0 40px 0 0;
       line-height: 57px;
       font-size: 18px; }
-    /* line 473, ../sass/styles.scss */
+    /* line 519, ../sass/styles.scss */
     #main #positions_table li .user_photo {
       position: absolute;
       right: -20px;
@@ -658,10 +715,10 @@ a {
       -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
       box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); }
-    /* line 490, ../sass/styles.scss */
+    /* line 536, ../sass/styles.scss */
     #main #positions_table li.small .user_trail:hover .user_data {
       display: block; }
-    /* line 492, ../sass/styles.scss */
+    /* line 538, ../sass/styles.scss */
     #main #positions_table li.small .user_data {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -676,47 +733,47 @@ a {
       width: 133px;
       padding: 13px 12px;
       background: url(../img/balloon.png) no-repeat center; }
-      /* line 506, ../sass/styles.scss */
+      /* line 552, ../sass/styles.scss */
       #main #positions_table li.small .user_data p {
         text-shadow: none;
         margin: 0;
         line-height: 1.2em;
         font-size: 16px;
         color: #333; }
-      /* line 513, ../sass/styles.scss */
+      /* line 559, ../sass/styles.scss */
       #main #positions_table li.small .user_data .user_name {
         float: none;
         width: 100%; }
-      /* line 517, ../sass/styles.scss */
+      /* line 563, ../sass/styles.scss */
       #main #positions_table li.small .user_data .user_points {
         font-size: 13px;
         float: none;
         color: #999; }
-    /* line 525, ../sass/styles.scss */
+    /* line 571, ../sass/styles.scss */
     #main #positions_table li.selected p {
       color: white; }
-    /* line 526, ../sass/styles.scss */
+    /* line 572, ../sass/styles.scss */
     #main #positions_table li.selected .user_trail {
       background-image: url(../img/position_trail_selected.png); }
-      /* line 528, ../sass/styles.scss */
+      /* line 574, ../sass/styles.scss */
       #main #positions_table li.selected .user_trail p {
         color: white; }
 
-/* line 537, ../sass/styles.scss */
+/* line 583, ../sass/styles.scss */
 #footer {
   padding-bottom: 40px;
   text-align: center; }
-  /* line 541, ../sass/styles.scss */
+  /* line 587, ../sass/styles.scss */
   #footer .row:first-child {
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.25); }
-  /* line 545, ../sass/styles.scss */
+  /* line 591, ../sass/styles.scss */
   #footer .footer_rights {
     color: rgba(255, 255, 255, 0.5); }
-    /* line 548, ../sass/styles.scss */
+    /* line 594, ../sass/styles.scss */
     #footer .footer_rights a {
       color: rgba(255, 255, 255, 0.8); }
-      /* line 551, ../sass/styles.scss */
+      /* line 597, ../sass/styles.scss */
       #footer .footer_rights a:hover {
         color: white;
         border-bottom: 1px dotted white; }
