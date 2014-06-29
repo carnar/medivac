@@ -73,6 +73,30 @@ a{
 .text_shadow{
     @include text-shadow(0px 2px 1px rgba(0,0,0,0.4));
 }
+#scrollTop{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 75px;
+    height: 45px;
+    padding-top: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    background: white url(../img/scrollTop.png) no-repeat center;
+    overflow: hidden;
+    text-indent: -9999px;
+    @include border-radius(100px);
+    @include box-shadow(0px 20px 35px rgba(0,0,0,0.8));
+    
+    &:hover{
+        cursor: pointer;
+        background-color: #f2f2f2;
+        @include box-shadow(0px 20px 35px rgba(0,0,0,1));
+    }
+}
 /////////////////////////////////////
 //buttons
 /////////////////////////////////////
@@ -118,7 +142,7 @@ a{
         background-color: #ffd155; // Old browsers
         @include filter-gradient(#ffd155, #ffc843, vertical); // IE6-9
         @include background-image(linear-gradient(top,  #ffd155 0%,#ffc843 100%));
-        @include box-shadow(0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255,255,255,0.2) inset,0px 20px 35px rgba(0,0,0,0.8));
+        @include box-shadow(0px -8px 0px #ff9a36 inset, 0px -9px 0px rgba(255,255,255,0.2) inset,0px 20px 35px rgba(0,0,0,1));
     }
 }
 /////////////////////////////////////
@@ -414,6 +438,28 @@ a{
     /////////////////////////////////////
     //positions_table
     /////////////////////////////////////
+    #search_input_container{
+        margin: 20px 0 10px;
+        color: white;
+        @extend .special_font;
+        
+        label{
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            @extend .text_shadow;
+        }
+        input{
+            display: inline-block;
+            vertical-align: middle;
+            width: 200px;
+            padding: 10px;
+            border: none;
+            @include border-radius(5px);
+            @include box-shadow(0px 4px 10px rgba(0,0,0,0.2));
+        }
+    }
     #positions_table{
         @extend .clear;
         margin-top: 20px;
