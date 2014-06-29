@@ -6,7 +6,7 @@ $( document ).ready(function() {
     if (window.location.href.indexOf('#_=_') > 0) {
         window.location = window.location.href.replace(/#.*/, '');
     }
-    
+
     $('#play_button').on("click", function(){
         $("#modal").fadeIn(200);
     });
@@ -14,16 +14,16 @@ $( document ).ready(function() {
         $("#modal").fadeOut(200);
     });
     //on resize for small user trail
-    $(window).resize(function(){
-        $("#positions_table li").each(function(){
-            if($(this).width() < 320){
-                $(this).addClass("small");
-            }
-            else{
-                $(this).removeClass("small");
-            }
-        });
-    });
+    // $(window).resize(function(){
+    //     $("#positions_table li").each(function(){
+    //         if($(this).width() < 320){
+    //             $(this).addClass("small");
+    //         }
+    //         else{
+    //             $(this).removeClass("small");
+    //         }
+    //     });
+    // });
     //move to position
     var userHash = window.location.hash.substr(1)
     var user = $("#" + userHash);
