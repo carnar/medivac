@@ -47,27 +47,28 @@ Route::get('/login/fb/callback', function() {
     return Redirect::to('/')->with('message', 'Logged in with Facebook');
 });
 
-Route::get('/', function()
-{
-    $data = array();
+Route::get('/', 'HomeController@index');
+// Route::get('/', function()
+// {
+//     $data = array();
  
-    if (Auth::check()) {
-        $data = Auth::user();
+//     if (Auth::check()) {
+//         $data = Auth::user();
 
-	        return Redirect::to('/leaderboard');
-     //    if($data['playing'])
-     //    {
-	    // }
-	    // else
-	    // {
-	    //     return Redirect::to('/prediction/create');
-	    // }
-    }
+// 	        return Redirect::to('/leaderboard');
+//      //    if($data['playing'])
+//      //    {
+// 	    // }
+// 	    // else
+// 	    // {
+// 	    //     return Redirect::to('/prediction/create');
+// 	    // }
+//     }
 
-    return View::make('home.index');
-    // return View::make('user', array('data'=>$data));
+//     return View::make('home.index');
+//     // return View::make('user', array('data'=>$data));
     
-});
+// });
  
 Route::get('logout', function() {
     Auth::logout();
@@ -87,7 +88,7 @@ Route::get('/leaderboard', function()
 });
 
 Route::resource('/prediction', 'PredictionController',
-                array('only' => array('show')));
+                array('only' => array('create', 'store', 'show')));
 
 
 // Route::resource('score', 'ScoreController',

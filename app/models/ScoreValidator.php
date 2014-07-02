@@ -6,37 +6,23 @@
 class ScoreValidator 
 {
 	protected $validator;
-	protected $rules = 	[
-				    	'1' => 'required|numeric|max:10',
-				    	'7' => 'required|numeric|max:10',
-				    	'9' => 'required|numeric|max:10',
-				    	'13' => 'required|numeric|max:10',
-				    	'6' => 'required|numeric|max:10',
-				    	'3' => 'required|numeric|max:10',
-				    	'14' => 'required|numeric|max:10',
-				     	'10' => 'required|numeric|max:10',
-				    	'19' => 'required|numeric|max:10',
-				     	'24' => 'required|numeric|max:10',
-				    	'25' => 'required|numeric|max:10',
-				     	'30' => 'required|numeric|max:10',
-				    	'21' => 'required|numeric|max:10',
-				     	'17' => 'required|numeric|max:10',
-				    	'29' => 'required|numeric|max:10',
-				     	'28' => 'required|numeric|max:10',
-						];
+	protected $rules = 	[];
 
-	public function __construct($data)
+	public function __construct($data, $tournamentId = 1)
 	{
+		// set rules
+		$matches = (new MatchRepository())->byTournamentId($tournamentId);
+		foreach ($matches as $match) {
+			$this->rules[$match->team_a->id] = 'required|numeric|max:10';
+			$this->rules[$match->team_b->id] = 'required|numeric|max:10';
+		}
+
 		$this->validator = Validator::make($data, $this->rules);
 	}
 
-	public function fails()
+	public function make()
 	{
-		return $this->validator->fails();
+		return $this->validator;
 	}
 
-	public function passes()
-	{
-		return $this->validator->passes();
-	}
 }

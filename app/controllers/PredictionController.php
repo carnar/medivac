@@ -13,28 +13,13 @@ class PredictionController extends \BaseController {
 		if(Auth::guest()  || Auth::user()->playing) return Redirect::to('/');
 
 		$data = new stdClass();
-		$data->user_id = Auth::user()->id;
-		$data->user_name = Auth::user()->name;
-		$data->user_photo = Auth::user()->photo;
-		if(isset(Auth::user()->position()->get()->first()->position))
-		{
-			$data->user_position = $user->position()->get()->first()->position;
-		}
-		else
-		{
-			$data->user_position = '';
-		}
-		$matches = Match::all();
-		$newMatches = [];
-		foreach ($matches as $match) {
-			$newMatch = new stdClass();
-			$newMatch->team_a = Team::find($match->team_a_id);
-			$newMatch->team_b = Team::find($match->team_b_id);
-			$newMatch->id = $match->id;
-			$newMatches[] = $newMatch;
-		}
-		$data->matches = $newMatches;
-		// exit;
+		
+		$user = new UserRepository();
+		$data->user = $user->logged();
+		$data->matches =  (new MatchRepository())->byTournamentId(
+								(new TournamentRepository())->currentId()
+																);
+
 		return View::make('prediction.formnew')->with('data', $data);
 	}
 
@@ -46,25 +31,22 @@ class PredictionController extends \BaseController {
 	 */
 	public function store()
 	{
-		$scoreValidator = new ScoreValidator(Input::get());
-		if($scoreValidator->fails()) return Redirect::back()
-												->withErrors(['Debe ingresar todos los marcadores.']);
+		//validation
+		$scoreValidator = (new ScoreValidator(
+									Input::get(), 
+									(new TournamentRepository())->currentId()
+						  ))->make();
 
-		$matches = Match::all();
-		foreach ($matches as $match) {
-			$prediction = [];
-			$prediction['user_id'] = Auth::user()->id;
-			$prediction['match_id'] = $match->id;
-			$prediction['score_a'] = Input::get($match->team_a_id);
-			$prediction['score_b'] = Input::get($match->team_b_id);
-			//validations
-			$result = Prediction::create($prediction);
-			// dd($result->id);
-		}
+		if($scoreValidator->fails()) 
+			return Redirect::back()->withErrors(['Debe ingresar todos los marcadores.']);
+
+		//save predictions
+		$predictions = new PredictionRepository();
+		$predictions->save(Auth::user(), Input::get());
+
 		//change playing status
-		$user = User::findOrFail(Auth::user()->id);
-		$user->playing = 1;
-		$user->save();
+		$user = new UserRepository();
+		$user->startGame(Auth::user()->id);
 
 		return Redirect::to('/prediction/' . Auth::user()->id);
 	}
@@ -80,42 +62,17 @@ class PredictionController extends \BaseController {
 	{
 		try 
 		{
-			$user = User::findOrFail($id);
-
-			$predictions = $user->predictions()->get();
 			$data = new stdClass();
-			$data->user_id = $user->id;
-			$data->user_name = $user->name;
-			$data->user_photo = $user->photo;
-			if(isset($user->position()->get()->first()->position))
-			{
-				$data->user_position = $user->position()->get()->first()->position;
-			}
-			else
-			{
-				$data->user_position = '';
-			}
 
-			$userPredictions = [];
-			foreach ($predictions as $prediction) {
+			$user = new UserRepository();
+			$data->user = $user->byId($id);
 
-				$match = Match::findOrFail($prediction->match_id);
-				$teamA = Team::findOrFail($match->team_a_id);
-				$teamB = Team::findOrFail($match->team_b_id);
-				
-				$userPrediction = new stdClass();
-				$userPrediction->team_a = $teamA;
-				$userPrediction->score_a = $prediction->score_a;
-				$userPrediction->team_b = $teamB;
-				$userPrediction->score_b = $prediction->score_b;
-				$userPredictions[] = $userPrediction;
+			$predictions = new PredictionRepository();
+			$data->predictions = $predictions->get($data->user, (new TournamentRepository())->currentId());
 
-			}
-			$data->user_predictions = $userPredictions;
 			return View::make('prediction.shownew')->with('data', $data);
 		} 
 		catch (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-			// echo "404";
 			App::abort(404); 
 		}
 	}
