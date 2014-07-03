@@ -34,5 +34,8 @@
                         </div>
                     </div>
             </div>
+            <div class="comments" style="text-align:center; background-color: #fff; margin-top:50px; padding-top:30px">
+                <div class="fb-comments" data-href="{{URL::current()}}" data-width="700px" data-numposts="5" data-colorscheme="light"></div>
+            </div>
         </div>
 @stop
