@@ -23,7 +23,8 @@
       ga('create', 'UA-2582665-5', 'auto');
       ga('send', 'pageview');
 
-    </script>    
+    </script>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">    
 </head>
 <body>
     @if($errors->any())
