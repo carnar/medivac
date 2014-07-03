@@ -1,11 +1,11 @@
 @extends('layouts.light')
 @section('content')
         <div class="row">
-            <p>&nbsp</p>
-            <p>Pronostica los resultados de los partidos de la próxima ronda del Mundial Brasil 2014 y podrás derrotar a tus amigos y demás participantes en este emocionante juego.</p>
+            <h1>Haz tus pronósticos !!</h1>
+            <p>Ya puedes hacer tus pronósticos para los Cuartos de Final de la Copa del Mundo Brasil 2014. Participa y derrota a tus amigos en este emocionante juego.</p>
             <p>&nbsp</p>
             <div style="text-align:center">
-            <iframe width="350" height="240" src="//w2.countingdownto.com/583564" frameborder="0"></iframe>
+            <iframe width="350" height="240" src="//w2.countingdownto.com/586902" frameborder="0"></iframe>
             <p>&nbsp</p>
             <p>&nbsp</p>
                     @if(Auth::guest())

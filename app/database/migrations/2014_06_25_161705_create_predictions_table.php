@@ -14,6 +14,7 @@ class CreatePredictionsTable extends Migration {
 	{
 		Schema::create('predictions', function(Blueprint $table) {
 			$table->increments('id');
+			$table->integer('tournament_id')->unsigned();
 			$table->integer('user_id')->unsigned();
 			$table->integer('match_id')->unsigned();
 			$table->integer('score_a');

@@ -2,7 +2,7 @@
 @section('content')
         <div class="row">
             <div id="prediction_table">
-                @foreach($data->user_predictions as $prediction)
+                @foreach($data->predictions as $prediction)
                     <div class="match">
                         <div class="team-a">
                             <label class="name {{ strtolower($prediction->team_a->country_code) }}" for="{{Str::slug($prediction->team_a->name)}}">{{ $prediction->team_a->name }}</label>
