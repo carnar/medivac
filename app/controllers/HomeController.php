@@ -6,8 +6,9 @@ class HomeController extends BaseController {
 	{
 		if(Auth::check())
 		{
+			$currentTournament = (new TournamentRepository())->current();
 			$data = Auth::user();
-			if($data->playing)
+			if($data->playing || $currentTournament->playing)
 			{
 				return Redirect::to('/leaderboard');
 			}

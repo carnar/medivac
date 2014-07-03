@@ -9,8 +9,9 @@ class PredictionController extends \BaseController {
 	 */
 	public function create()
 	{
+		$currentTournament = (new TournamentRepository())->current();
 
-		if(Auth::guest()  || Auth::user()->playing) return Redirect::to('/');
+		if(Auth::guest()  || Auth::user()->playing || $currentTournament->playing) return Redirect::to('/');
 
 		$data = new stdClass();
 		

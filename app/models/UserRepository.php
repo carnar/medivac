@@ -36,7 +36,7 @@ class UserRepository
 		$userMapped->name = $user->name;
 		$userMapped->photo = $user->photo;
 		$userMapped->position = $this->positionByTournamentId($user, $this->tournament->currentId());
-		$userMapped->predictions = $user->predictions()->get();
+		$userMapped->predictions = $user->predictions();
 		return $userMapped;
 	}
 

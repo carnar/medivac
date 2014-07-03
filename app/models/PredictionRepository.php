@@ -26,7 +26,7 @@ class PredictionRepository
 
 	public function get($user, $tournamentId)
 	{
-		$predictions = $user->predictions;
+		$predictions = $user->predictions->where('tournament_id', '=', $tournamentId)->get();
 		$predictionsDetails = [];
 		
 		foreach ($predictions as $prediction) 

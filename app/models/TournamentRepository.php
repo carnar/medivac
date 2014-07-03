@@ -18,6 +18,6 @@ class TournamentRepository
 
 	public function current()
 	{
-		return $this->tournament->find($this->currentId);
+		return $this->model->find($this->currentId());
 	}
 }
