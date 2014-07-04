@@ -9,6 +9,7 @@ class UserRepository
 		$this->logged = Auth::user();
 		$this->model = new User();
 		$this->tournament = new TournamentRepository();
+		$this->prediction = new PredictionRepository();
 	}
 
 	public function positionByTournamentId($user, $tournamentId)
@@ -47,4 +48,17 @@ class UserRepository
 		$user->save();
 	}
 
+	public function playingByTournamentId($tournamentId)
+	{
+		$users = $this->model->where('playing', '=', 1)->orderBy('name')->get();
+		$playingUsers = [];
+		foreach ($users as $user) {
+			$predictions = $this->prediction->byUserIdAndTournamentId($user->id, $tournamentId)->get();
+			if(!empty($predictions))
+			{
+				$playingUsers[] = $user;
+			}
+		}
+		return $users;
+	}
 }

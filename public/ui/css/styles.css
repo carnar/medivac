@@ -413,26 +413,29 @@ a {
     width: 275px;
     height: 40px;
     background: url(../img/logo.png) center no-repeat; }
-  /* line 272, ../sass/styles.scss */
+    /* line 271, ../sass/styles.scss */
+    #header #logo a {
+      display: block; }
+  /* line 276, ../sass/styles.scss */
   #header #main_menu {
     float: right;
     list-style: none;
     font-size: 20px; }
-    /* line 278, ../sass/styles.scss */
+    /* line 282, ../sass/styles.scss */
     #header #main_menu li {
       float: left;
       margin-left: 20px;
       line-height: 40px; }
-      /* line 283, ../sass/styles.scss */
+      /* line 287, ../sass/styles.scss */
       #header #main_menu li a {
         color: white; }
-      /* line 286, ../sass/styles.scss */
+      /* line 290, ../sass/styles.scss */
       #header #main_menu li:hover a, #header #main_menu li.current a {
         color: #FFC934; }
-  /* line 292, ../sass/styles.scss */
+  /* line 296, ../sass/styles.scss */
   #header #user_data {
     padding-bottom: 20px; }
-    /* line 298, ../sass/styles.scss */
+    /* line 302, ../sass/styles.scss */
     #header #user_data #user_photo {
       overflow: hidden;
       float: left;
@@ -448,7 +451,7 @@ a {
       -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
       box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); }
-    /* line 308, ../sass/styles.scss */
+    /* line 312, ../sass/styles.scss */
     #header #user_data #user_name {
       padding-top: 25px;
       padding-left: 15px;
@@ -459,35 +462,35 @@ a {
       text-overflow: ellipsis;
       white-space: nowrap;
       line-height: 35px; }
-    /* line 317, ../sass/styles.scss */
+    /* line 321, ../sass/styles.scss */
     #header #user_data #user_position {
       padding-left: 15px;
       color: rgba(255, 255, 255, 0.6);
       font-size: 24px;
       line-height: 24px; }
-      /* line 322, ../sass/styles.scss */
+      /* line 326, ../sass/styles.scss */
       #header #user_data #user_position:hover {
         color: #FFC934; }
 
-/* line 332, ../sass/styles.scss */
+/* line 336, ../sass/styles.scss */
 #main .row:first-child {
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.25); }
-/* line 336, ../sass/styles.scss */
+/* line 340, ../sass/styles.scss */
 #main .row:last-child {
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
-/* line 344, ../sass/styles.scss */
+/* line 348, ../sass/styles.scss */
 #main #prediction_table {
   text-align: center; }
-  /* line 346, ../sass/styles.scss */
+  /* line 350, ../sass/styles.scss */
   #main #prediction_table .date_row {
     padding: 10px 20px;
     margin-top: 20px;
     font-size: 18px;
     color: #333;
     background: white; }
-  /* line 354, ../sass/styles.scss */
+  /* line 358, ../sass/styles.scss */
   #main #prediction_table .match {
     padding: 10px 20px;
     border-top: 1px solid #222;
@@ -496,18 +499,18 @@ a {
     -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); }
-    /* line 362, ../sass/styles.scss */
+    /* line 366, ../sass/styles.scss */
     #main #prediction_table .match .prediction {
       float: left;
       width: 20%;
       line-height: 48px;
       color: white;
       font-size: 18px; }
-    /* line 369, ../sass/styles.scss */
+    /* line 373, ../sass/styles.scss */
     #main #prediction_table .match .team-a, #main #prediction_table .match .team-b {
       float: left;
       width: 40%; }
-      /* line 373, ../sass/styles.scss */
+      /* line 377, ../sass/styles.scss */
       #main #prediction_table .match .team-a label, #main #prediction_table .match .team-b label {
         float: left;
         color: white;
@@ -524,55 +527,55 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
-        /* line 388, ../sass/styles.scss */
+        /* line 392, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.ar, #main #prediction_table .match .team-b label.ar {
           background-image: url(../img/flags/x48/ar.png); }
-        /* line 389, ../sass/styles.scss */
+        /* line 393, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.be, #main #prediction_table .match .team-b label.be {
           background-image: url(../img/flags/x48/be.png); }
-        /* line 390, ../sass/styles.scss */
+        /* line 394, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.br, #main #prediction_table .match .team-b label.br {
           background-image: url(../img/flags/x48/br.png); }
-        /* line 391, ../sass/styles.scss */
+        /* line 395, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.ch, #main #prediction_table .match .team-b label.ch {
           background-image: url(../img/flags/x48/ch.png); }
-        /* line 392, ../sass/styles.scss */
+        /* line 396, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.cl, #main #prediction_table .match .team-b label.cl {
           background-image: url(../img/flags/x48/cl.png); }
-        /* line 393, ../sass/styles.scss */
+        /* line 397, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.co, #main #prediction_table .match .team-b label.co {
           background-image: url(../img/flags/x48/co.png); }
-        /* line 394, ../sass/styles.scss */
+        /* line 398, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.cr, #main #prediction_table .match .team-b label.cr {
           background-image: url(../img/flags/x48/cr.png); }
-        /* line 395, ../sass/styles.scss */
+        /* line 399, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.de, #main #prediction_table .match .team-b label.de {
           background-image: url(../img/flags/x48/de.png); }
-        /* line 396, ../sass/styles.scss */
+        /* line 400, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.dz, #main #prediction_table .match .team-b label.dz {
           background-image: url(../img/flags/x48/dz.png); }
-        /* line 397, ../sass/styles.scss */
+        /* line 401, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.fr, #main #prediction_table .match .team-b label.fr {
           background-image: url(../img/flags/x48/fr.png); }
-        /* line 398, ../sass/styles.scss */
+        /* line 402, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.gr, #main #prediction_table .match .team-b label.gr {
           background-image: url(../img/flags/x48/gr.png); }
-        /* line 399, ../sass/styles.scss */
+        /* line 403, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.mx, #main #prediction_table .match .team-b label.mx {
           background-image: url(../img/flags/x48/mx.png); }
-        /* line 400, ../sass/styles.scss */
+        /* line 404, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.ng, #main #prediction_table .match .team-b label.ng {
           background-image: url(../img/flags/x48/ng.png); }
-        /* line 401, ../sass/styles.scss */
+        /* line 405, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.nl, #main #prediction_table .match .team-b label.nl {
           background-image: url(../img/flags/x48/nl.png); }
-        /* line 402, ../sass/styles.scss */
+        /* line 406, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.us, #main #prediction_table .match .team-b label.us {
           background-image: url(../img/flags/x48/us.png); }
-        /* line 403, ../sass/styles.scss */
+        /* line 407, ../sass/styles.scss */
         #main #prediction_table .match .team-a label.uy, #main #prediction_table .match .team-b label.uy {
           background-image: url(../img/flags/x48/uy.png); }
-      /* line 405, ../sass/styles.scss */
+      /* line 409, ../sass/styles.scss */
       #main #prediction_table .match .team-a input, #main #prediction_table .match .team-b input {
         float: left;
         padding: 10px;
@@ -589,7 +592,7 @@ a {
         -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8);
         -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8);
         box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset, 0px 2px 5px rgba(0, 0, 0, 0.8); }
-    /* line 418, ../sass/styles.scss */
+    /* line 422, ../sass/styles.scss */
     #main #prediction_table .match .team-b label {
       float: right;
       padding-left: 0;
@@ -598,25 +601,25 @@ a {
       margin-left: 10px;
       text-align: right;
       background-position: right center; }
-    /* line 427, ../sass/styles.scss */
+    /* line 431, ../sass/styles.scss */
     #main #prediction_table .match .team-b input {
       float: right; }
-  /* line 432, ../sass/styles.scss */
+  /* line 436, ../sass/styles.scss */
   #main #prediction_table button.yellow {
     display: block;
     width: 100%;
     margin: 20px 0 0; }
-/* line 441, ../sass/styles.scss */
+/* line 445, ../sass/styles.scss */
 #main #search_input_container {
   margin: 20px 0 10px;
   color: white; }
-  /* line 446, ../sass/styles.scss */
+  /* line 450, ../sass/styles.scss */
   #main #search_input_container label {
     font-size: 16px;
     display: inline-block;
     vertical-align: middle;
     margin-right: 5px; }
-  /* line 453, ../sass/styles.scss */
+  /* line 457, ../sass/styles.scss */
   #main #search_input_container input {
     display: inline-block;
     vertical-align: middle;
@@ -631,10 +634,10 @@ a {
     -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
-/* line 463, ../sass/styles.scss */
+/* line 467, ../sass/styles.scss */
 #main #positions_table {
   margin-top: 20px; }
-  /* line 467, ../sass/styles.scss */
+  /* line 471, ../sass/styles.scss */
   #main #positions_table li {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -644,7 +647,7 @@ a {
     height: 57px;
     min-width: 120px;
     margin-bottom: 3px; }
-    /* line 476, ../sass/styles.scss */
+    /* line 480, ../sass/styles.scss */
     #main #positions_table li .user_trail {
       position: relative;
       display: block;
@@ -659,26 +662,26 @@ a {
       -webkit-box-shadow: 25px 0px 10px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 25px 0px 10px rgba(0, 0, 0, 0.2);
       box-shadow: 25px 0px 10px rgba(0, 0, 0, 0.2); }
-      /* line 486, ../sass/styles.scss */
+      /* line 490, ../sass/styles.scss */
       #main #positions_table li .user_trail p {
         color: rgba(255, 255, 255, 0.7); }
-      /* line 488, ../sass/styles.scss */
+      /* line 492, ../sass/styles.scss */
       #main #positions_table li .user_trail:hover {
         background-position: left bottom; }
-        /* line 490, ../sass/styles.scss */
+        /* line 494, ../sass/styles.scss */
         #main #positions_table li .user_trail:hover p {
           color: white; }
-    /* line 493, ../sass/styles.scss */
+    /* line 497, ../sass/styles.scss */
     #main #positions_table li .user_data {
       float: left;
       height: 100%; }
-      /* line 497, ../sass/styles.scss */
+      /* line 501, ../sass/styles.scss */
       #main #positions_table li .user_data p {
         margin: 0;
         line-height: 57px;
         font-size: 18px;
         margin-right: 10px; }
-      /* line 503, ../sass/styles.scss */
+      /* line 507, ../sass/styles.scss */
       #main #positions_table li .user_data .user_name {
         display: block;
         overflow: hidden;
@@ -686,17 +689,17 @@ a {
         white-space: nowrap;
         float: right;
         width: 150px; }
-      /* line 508, ../sass/styles.scss */
+      /* line 512, ../sass/styles.scss */
       #main #positions_table li .user_data .user_points {
         font-size: 16px;
         float: left; }
-    /* line 513, ../sass/styles.scss */
+    /* line 517, ../sass/styles.scss */
     #main #positions_table li .user_position {
       float: right;
       margin: 0 40px 0 0;
       line-height: 57px;
       font-size: 18px; }
-    /* line 519, ../sass/styles.scss */
+    /* line 523, ../sass/styles.scss */
     #main #positions_table li .user_photo {
       position: absolute;
       right: -20px;
@@ -715,10 +718,10 @@ a {
       -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
       box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); }
-    /* line 536, ../sass/styles.scss */
+    /* line 540, ../sass/styles.scss */
     #main #positions_table li.small .user_trail:hover .user_data {
       display: block; }
-    /* line 538, ../sass/styles.scss */
+    /* line 542, ../sass/styles.scss */
     #main #positions_table li.small .user_data {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -733,47 +736,47 @@ a {
       width: 133px;
       padding: 13px 12px;
       background: url(../img/balloon.png) no-repeat center; }
-      /* line 552, ../sass/styles.scss */
+      /* line 556, ../sass/styles.scss */
       #main #positions_table li.small .user_data p {
         text-shadow: none;
         margin: 0;
         line-height: 1.2em;
         font-size: 16px;
         color: #333; }
-      /* line 559, ../sass/styles.scss */
+      /* line 563, ../sass/styles.scss */
       #main #positions_table li.small .user_data .user_name {
         float: none;
         width: 100%; }
-      /* line 563, ../sass/styles.scss */
+      /* line 567, ../sass/styles.scss */
       #main #positions_table li.small .user_data .user_points {
         font-size: 13px;
         float: none;
         color: #999; }
-    /* line 571, ../sass/styles.scss */
+    /* line 575, ../sass/styles.scss */
     #main #positions_table li.selected p {
       color: white; }
-    /* line 572, ../sass/styles.scss */
+    /* line 576, ../sass/styles.scss */
     #main #positions_table li.selected .user_trail {
       background-image: url(../img/position_trail_selected.png); }
-      /* line 574, ../sass/styles.scss */
+      /* line 578, ../sass/styles.scss */
       #main #positions_table li.selected .user_trail p {
         color: white; }
 
-/* line 583, ../sass/styles.scss */
+/* line 587, ../sass/styles.scss */
 #footer {
   padding-bottom: 40px;
   text-align: center; }
-  /* line 587, ../sass/styles.scss */
+  /* line 591, ../sass/styles.scss */
   #footer .row:first-child {
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.25); }
-  /* line 591, ../sass/styles.scss */
+  /* line 595, ../sass/styles.scss */
   #footer .footer_rights {
     color: rgba(255, 255, 255, 0.5); }
-    /* line 594, ../sass/styles.scss */
+    /* line 598, ../sass/styles.scss */
     #footer .footer_rights a {
       color: rgba(255, 255, 255, 0.8); }
-      /* line 597, ../sass/styles.scss */
+      /* line 601, ../sass/styles.scss */
       #footer .footer_rights a:hover {
         color: white;
         border-bottom: 1px dotted white; }
