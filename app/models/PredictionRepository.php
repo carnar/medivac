@@ -45,4 +45,10 @@ class PredictionRepository
 		return $predictionsDetails;
 	}
 
+	public function byUserIdAndTournamentId($userId, $tournamentId)
+	{
+		return $this->model->where('user_id', '=', $userId)
+						   	->where('tournament_id', '=', $tournamentId);
+	}
+
 }

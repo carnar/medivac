@@ -54,12 +54,13 @@ Route::get('logout', function() {
     return Redirect::to('/');
 });
 
-Route::get('/leaderboard', function()
-{
-    $data = Position::all();
-    // return View::make('leaderboard.index')->with('data', $data);
-    return View::make('leaderboard.countdown');
-});
+// Route::get('/leaderboard', function()
+// {
+//     $data = Position::all();
+//     // return View::make('leaderboard.index')->with('data', $data);
+//     return View::make('leaderboard.countdown');
+// });
+Route::get('/leaderboard', 'LeaderboardController@index');
 
 Route::resource('/prediction', 'PredictionController',
                 array('only' => array('create', 'store', 'show')));
