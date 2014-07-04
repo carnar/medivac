@@ -1,12 +1,14 @@
 @extends('layouts.light')
 @section('content')
         <div class="row">
+          @if(!$playing)
             <div style="text-align:center">
                 <iframe width="350" height="240" src="//w2.countingdownto.com/586902" frameborder="0"></iframe>
                 <p>&nbsp</p>
             </div>
+          @endif
            <h1>Jugadores inscritos</h1>
-           <p> Participa es totalmente gratis. </p>
+           <p>Descubre quién ganará.</p>
            <hr />
             <div id="search_input_container">
                <label for="search_input">Encuéntrate</label>

@@ -6,27 +6,24 @@ class Points
 	protected $matches;
 	protected $matchesComparison;
 	protected $leaderboard;
+	protected $tournamentId;
 	private $rules = ['guess_result' => 3, 'guess_score' => 1];
 
-	public function __construct($users, $matches)
+	public function __construct($users, $matches, $tournamentId)
 	{
 		$this->users = $users;
 		$this->matches = $matches;
+		$this->tournamentId = $tournamentId;
 		$this->matchesComparison = new MatchesComparison();
-		$this->leaderboard = new Leaderboard();
+		$this->leaderboard = new Leaderboard($tournamentId);
 	}
 
 	public function assignment()
 	{
 		foreach ($this->users as $user) {
-			$this->assignToUser($user, $this->matches);
+			$this->assignToUser($user, $this->matches, $this->tournamentId);
 		}
 		$this->leaderboard->make();
-	}
-
-	public function createLeaderboard($user)
-	{
-		// $total = Prediction::groupBy($user->id)->get('')first();
 	}
 
 	/**
@@ -34,14 +31,12 @@ class Points
 	 * @param  Model 		$user    User's data
 	 * @param  Collection 	$matches Real matches score
 	 */
-	public function assignToUser($user, $matches)
+	public function assignToUser($user, $matches, $tournamentId)
 	{
-		// dd($user->predictions()->get());
-		foreach ($user->predictions()->get() as $prediction)
+		foreach ($user->predictions()->where('tournament_id', '=', $tournamentId)->get() as $prediction)
 		{
 			$points = 0;
 			$match = $matches->find($prediction->match_id);
-			//echo "<p>----$match->score_a****</p>";
 			if($match->score_a != '')
 			{
 				$points = $this->calculate($prediction, $match);
@@ -49,7 +44,6 @@ class Points
 				$prediction->save();
 			}
 		}
-		// dd('fin');
 	}
 
 	public function calculate($prediction, $match)

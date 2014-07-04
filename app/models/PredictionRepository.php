@@ -40,6 +40,7 @@ class PredictionRepository
 			$predictionDetail->score_a = $prediction->score_a;
 			$predictionDetail->team_b = $teamB;
 			$predictionDetail->score_b = $prediction->score_b;
+			$predictionDetail->points = $prediction->points;
 			$predictionsDetails[] = $predictionDetail;
 		}
 		return $predictionsDetails;

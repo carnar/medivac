@@ -3,16 +3,25 @@
 * Leaderboard manager
 */
 class Leaderboard {
-	
-	public function make()
+	protected $tournamentId;
+
+	public function __construct($tournamentId)
 	{
-		$this->update($this->positions());
-		$this->assignPlaces(Position::all());
+		$this->tournamentId = $tournamentId;
 	}
 
-	public function assignPlaces($players)
+	public function make()
 	{
-		$places = $this->getPlacesByPoints();
+		$this->update($this->positions($this->tournamentId), $this->tournamentId);
+		$this->assignPlaces(
+				Position::where('tournament_id', '=', $this->tournamentId)->get(),
+				$this->tournamentId
+		);
+	}
+
+	public function assignPlaces($players, $tournamentId)
+	{
+		$places = $this->getPlacesByPoints($tournamentId);
 		$maxPoints = $places[0]->points;
 		// dd($places[0]->points);
 		foreach ($players as $player) 
@@ -31,26 +40,34 @@ class Leaderboard {
 		}
 	}
 
-	public function getPlacesByPoints()
+	public function getPlacesByPoints($tournamentId)
 	{
-		return DB::select(DB::raw("SELECT DISTINCT points FROM positions ORDER BY(points) DESC"));
+		return DB::select(
+				DB::raw("SELECT DISTINCT points FROM positions WHERE tournament_id = :tournament_id ORDER BY(points) DESC"),
+				['tournament_id' => $tournamentId]
+		);
 	}
 
-	private function positions()
+	private function positions($tournamentId)
 	{
-		return DB::select(DB::raw('SELECT u.id as user_id, u.name, u.photo, sum(p.points) AS points FROM predictions p, users u WHERE u.id = p.user_id GROUP BY u.id ORDER BY points DESC'));
+		return DB::select(
+				DB::raw('SELECT u.id as user_id, p.tournament_id as tournament_id, u.name, u.photo, sum(p.points) AS points FROM predictions p, users u WHERE u.id = p.user_id AND tournament_id = :tournament_id GROUP BY u.id ORDER BY points DESC'),
+				['tournament_id' => $tournamentId]
+				);
 	}
 
-	private function update($positions)
+	private function update($positions, $tournamentId)
 	{
-		$this->delete();
+		$this->delete($tournamentId);
 		foreach ($positions as $position) {
 			Position::create((array)$position);
 		}
 	}
 
-	private function delete()
+	private function delete($tournamentId)
 	{
-		return DB::delete(DB::raw('DELETE FROM positions'));
+		return DB::delete(
+				DB::raw("DELETE FROM positions WHERE tournament_id = :tournament_id"), 
+				['tournament_id' => $tournamentId]);
 	}
 }
