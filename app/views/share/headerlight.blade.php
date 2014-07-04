@@ -10,4 +10,5 @@
                 <li><a href="/rules">Reglas</a></li>
             </ul>
         </div>
+        @include('share.scores')
       </div>

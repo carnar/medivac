@@ -48,44 +48,15 @@ Route::get('/login/fb/callback', function() {
 });
 
 Route::get('/', 'HomeController@index');
- 
-Route::get('logout', function() {
-    Auth::logout();
-    return Redirect::to('/');
-});
-
-// Route::get('/leaderboard', function()
-// {
-//     $data = Position::all();
-//     // return View::make('leaderboard.index')->with('data', $data);
-//     return View::make('leaderboard.countdown');
-// });
 Route::get('/leaderboard', 'LeaderboardController@index');
-
-Route::resource('/prediction', 'PredictionController',
-                array('only' => array('create', 'store', 'show')));
-
-
-// Route::resource('score', 'ScoreController',
-// 				['only' => ['edit', 'update', 'show']]);
-
 Route::get('scores', 'ScoreController@index');
 Route::get('scores/edit', 'ScoreController@edit');
 Route::post('scores', 'ScoreController@update');
 Route::get('rules', function(){ return View::make('share.rules'); });
+Route::resource('/prediction', 'PredictionController',
+                array('only' => array('create', 'store', 'show')));
 
-// Route::resource('carnar', 'CarnarController');
-// Route::get('test', function()
-// {
-//  // assign points;
-//  $points = new Points(User::all(), Match::all());
-//  $points->assignment();
-// });
-
-Route::get('test', function()
-{
-	$leaderboard = new Leaderboard();
-	$leaderboard->make();
-    dd(url('/'));
-    return View::make('share.test');
+Route::get('logout', function() {
+    Auth::logout();
+    return Redirect::to('/');
 });

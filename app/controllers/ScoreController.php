@@ -25,19 +25,9 @@ class ScoreController extends BaseController {
 	{
 		if(Auth::guest() ||  !Auth::user()->is_admin) return Redirect::to('/');
 
-		$matches = Match::all();
-		$data = [];
-		foreach ($matches as $match) {
-			$newMatch = new stdClass();
-			$newMatch->team_a = Team::find($match->team_a_id);
-			$newMatch->team_b = Team::find($match->team_b_id);
-			$newMatch->id = $match->id;
-			$newMatch->score_a = $match->score_a;
-			$newMatch->score_b = $match->score_b;
-			//$newMatch->score_b = $match->score_b;
-			$data[] = $newMatch;
-		}
-
+		$data = (new MatchRepository())->byTournamentId(
+								(new TournamentRepository())->currentId()
+																);
 		return View::make('scores.form')->with('matches', $data);
 	}
 
@@ -45,19 +35,21 @@ class ScoreController extends BaseController {
 	{
 		//validation
 		$message = 'Se guardaron los resultados';
+		
+		$tournamentId = (new TournamentRepository())->currentId();
+		$matchRepo = new MatchRepository();
+		$userRepo = new UserRepository();
 
-		$matches = Match::all();
-		foreach ($matches as $match) {
-			if(Input::get($match->team_a_id) != '')
-			{
-				$match->score_a = Input::get($match->team_a_id);
-				$match->score_b = Input::get($match->team_b_id);
-				$match->save();
-			}
-		}
-			
+		$matches = $matchRepo->byTournamentId($tournamentId);
+		$matchRepo->saveScores($matches, Input::get());
+
+		// dd('Se grabaron los marcadores');	
 		// assign points;
-		$points = new Points(User::all(), Match::all());
+		$points = new Points(
+							$userRepo->playingByTournamentId($tournamentId), 
+							$matchRepo->allByTournamentId($tournamentId),
+							$tournamentId
+							);
 		$points->assignment();
 
 		return Redirect::to('scores/edit')->with('message', $message);

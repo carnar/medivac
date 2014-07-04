@@ -14,9 +14,11 @@ class UserRepository
 
 	public function positionByTournamentId($user, $tournamentId)
 	{
+		$positionTournament = '';
 		$positions = $user->positions();
-		$positionTournament = $positions->where('tournament_id', '=', $tournamentId)->first();
-		return (empty($positionTournament)) ? $positionTournament : '' ;
+		if(isset($positions->where('tournament_id', '=', $tournamentId)->first()->position))
+			$positionTournament = $positions->where('tournament_id', '=', $tournamentId)->first()->position;
+		return (!empty($positionTournament)) ? $positionTournament : '' ;
 	}
 
 	public function logged()
