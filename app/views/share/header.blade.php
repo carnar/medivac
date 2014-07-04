@@ -10,6 +10,7 @@
                 <li><a href="/rules">Reglas</a></li>
             </ul>
         </div>
+        @include('share.scores')
         <div class="row">
             <div id="user_data" class="first">
                 <div id="user_photo"><img src="{{ $data->user->photo . "?type=normal" }}" alt="user_name"></div>

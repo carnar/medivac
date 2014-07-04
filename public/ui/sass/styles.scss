@@ -248,10 +248,15 @@ a{
 #header{
     padding-top: 20px;
     @include background-image(linear-gradient(top,  rgba(0,0,0,.75) 10%,rgba(0,0,0,0.50) 50%,rgba(0,0,0,0) 100%));
-
+    
+    .row{
+        border-top: 1px solid rgba(0,0,0,0.25);
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
     .row:first-child{
         padding-top: 20px;
         padding-bottom: 20px;
+        border-top: none;
         border-bottom: 1px solid rgba(255,255,255,0.25);
     }
     .row:last-child{
@@ -267,6 +272,10 @@ a{
         width: 275px;
         height: 40px;
         background: url(../img/logo.png) center no-repeat;
+        
+        a{
+            display: block;
+        }
     }
     //main menu
     #main_menu{
@@ -326,6 +335,49 @@ a{
     }
 }
 /////////////////////////////////////
+//matchs_timeline
+/////////////////////////////////////
+#matchs_timeline{
+    @extend .clear;
+    padding: 20px 0;
+    background: url(../img/timeline.png) no-repeat center;
+    li{
+        float: left;
+        width: 25%;
+        text-align: center;
+        .match-score{
+            @extend .special_font;
+            @include border-radius(100px);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border: 3px solid white;
+            margin: 0 auto;
+            color: #222;
+            background: white;
+            @include box-shadow(0px 10px 15px rgba(0,0,0,0.25));
+        }
+        &.completed .match-score{
+            color: white;
+            @extend .text_shadow;
+        }
+        &#match1.completed .match-score{
+            background: #FFC934;
+        }
+        &#match2.completed .match-score{
+            background: #0088C3;
+        }
+        &#match3.completed .match-score{
+            background: #00BB4D;
+            color: white;
+        }
+        &#match4.completed .match-score{
+            background: #FF3347;
+        }
+        
+    }
+}
+/////////////////////////////////////
 //main
 /////////////////////////////////////
 #main{
@@ -361,7 +413,7 @@ a{
             
             .prediction{
                 float: left;
-                width: 20%;
+                width: 15%;
                 line-height: 48px;
                 color: white;
                 font-size: 18px;
@@ -375,7 +427,7 @@ a{
                     @extend .special_font;
                     color: white;
                     display: inline-block;
-                    width: 110px;
+                    width:auto;
                     padding-left: 55px;
                     margin-right: 10px;
                     text-align: left;
@@ -428,11 +480,31 @@ a{
                     float: right;
                 }
             }
+            .points{
+                float: right;
+                width: 5%;
+                line-height: 48px;
+                text-align: right;
+                color: white;
+            }
         }
         button.yellow{
             display: block;
             width: 100%;
             margin: 20px 0 0;
+        }
+        form{
+            .match{
+                .prediction{
+                    width: 10%;
+                }
+                .team-a,.team-b{
+                    width: 45%;
+                    label{
+                        width: 110px;
+                    }
+                }
+            }
         }
     }
     /////////////////////////////////////

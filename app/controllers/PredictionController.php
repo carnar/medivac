@@ -63,6 +63,9 @@ class PredictionController extends \BaseController {
 	{
 		try 
 		{
+			$currentTournament = (new TournamentRepository)->current();
+			$matches = (new MatchRepository())->byTournamentId($currentTournament->id);
+
 			$data = new stdClass();
 
 			$user = new UserRepository();
@@ -71,7 +74,7 @@ class PredictionController extends \BaseController {
 			$predictions = new PredictionRepository();
 			$data->predictions = $predictions->get($data->user, (new TournamentRepository())->currentId());
 
-			return View::make('prediction.shownew')->with('data', $data);
+			return View::make('prediction.shownew')->with('data', $data)->with('scores', $matches);
 		} 
 		catch (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
 			App::abort(404); 
