@@ -5,7 +5,7 @@
             <p>Ya puedes hacer tus pronósticos para los Cuartos de Final de la Copa del Mundo Brasil 2014. Participa y derrota a tus amigos en este emocionante juego.</p>
             <p>&nbsp</p>
             <div style="text-align:center">
-            <iframe width="350" height="240" src="//w2.countingdownto.com/586902" frameborder="0"></iframe>
+            <iframe width="350" height="240" src="//w2.countingdownto.com/589671" frameborder="0"></iframe>
             <p>&nbsp</p>
             <p>&nbsp</p>
                     @if(Auth::guest())
