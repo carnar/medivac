@@ -56,11 +56,11 @@ class UserRepository
 		$playingUsers = [];
 		foreach ($users as $user) {
 			$predictions = $this->prediction->byUserIdAndTournamentId($user->id, $tournamentId)->get();
-			if(!empty($predictions))
+			if(!$predictions->isEmpty())
 			{
 				$playingUsers[] = $user;
 			}
 		}
-		return $users;
+		return $playingUsers;
 	}
 }
