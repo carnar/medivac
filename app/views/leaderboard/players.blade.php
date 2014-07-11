@@ -8,7 +8,12 @@
             </div>
           @endif
             <div style="text-align:center">
-                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{URL::current()}}"><button id="login_button" class="button fb_blue"><span>Comparte en facebook</span></button></a>
+                @if(Auth::guest())
+                    <a href="/login/fb"><button id="login_button" class="button fb_blue"><span>Participa tú también!</span></button></a>
+                    @else
+                    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{URL::current()}}"><button id="login_button" class="button fb_blue"><span>Comparte en facebook</span></button></a>
+                @endif    
+                <!-- <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{URL::current()}}"><button id="login_button" class="button fb_blue"><span>Comparte en facebook</span></button></a> -->
                 <p>&nbsp</p>
             </div>
            <h1>Jugadores inscritos</h1>
