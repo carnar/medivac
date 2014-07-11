@@ -7,6 +7,10 @@
                 <p>&nbsp</p>
             </div>
           @endif
+            <div style="text-align:center">
+                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{URL::current()}}"><button id="login_button" class="button fb_blue"><span>Comparte en facebook</span></button></a>
+                <p>&nbsp</p>
+            </div>
            <h1>Jugadores inscritos</h1>
            <p>Descubre quién ganará.</p>
            <hr />
@@ -26,9 +30,5 @@
                </li>
             @endforeach
             </ul>
-            <div style="text-align:center">
-            <p>&nbsp</p>
-                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{URL::current()}}"><button id="login_button" class="button fb_blue"><span>Comparte en facebook</span></button></a>
-            </div>
         </div>
 @stop
